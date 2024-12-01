@@ -1,5 +1,4 @@
 mod day;
-mod day0;
 mod day1;
 mod day2;
 mod day3;
@@ -26,9 +25,7 @@ mod day23;
 mod day24;
 mod day25;
 
-
 use day::{Day, Answer};
-use day0::Day0;
 use day1::Day1;
 use day2::Day2;
 use day3::Day3;
@@ -55,7 +52,31 @@ use day23::Day23;
 use day24::Day24;
 use day25::Day25;
 
-
+use data_aoc2024::DAY1_INPUT;
+use data_aoc2024::DAY2_INPUT;
+use data_aoc2024::DAY3_INPUT;
+use data_aoc2024::DAY4_INPUT;
+use data_aoc2024::DAY5_INPUT;
+use data_aoc2024::DAY6_INPUT;
+use data_aoc2024::DAY7_INPUT;
+use data_aoc2024::DAY8_INPUT;
+use data_aoc2024::DAY9_INPUT;
+use data_aoc2024::DAY10_INPUT;
+use data_aoc2024::DAY11_INPUT;
+use data_aoc2024::DAY12_INPUT;
+use data_aoc2024::DAY13_INPUT;
+use data_aoc2024::DAY14_INPUT;
+use data_aoc2024::DAY15_INPUT;
+use data_aoc2024::DAY16_INPUT;
+use data_aoc2024::DAY17_INPUT;
+use data_aoc2024::DAY18_INPUT;
+use data_aoc2024::DAY19_INPUT;
+use data_aoc2024::DAY20_INPUT;
+use data_aoc2024::DAY21_INPUT;
+use data_aoc2024::DAY22_INPUT;
+use data_aoc2024::DAY23_INPUT;
+use data_aoc2024::DAY24_INPUT;
+use data_aoc2024::DAY25_INPUT;
 
 fn report_day(day: &dyn Day, day_no: usize) {
     
@@ -75,51 +96,50 @@ fn report_day(day: &dyn Day, day_no: usize) {
     println!("Day {day_no:2}: {msg1:>16} {msg2:>16}");
 }
 
-static DAYS: [&dyn Day; 26] = [
-    &Day0::new("data_aoc2023/day0.txt"),  // Placeholder
-    &Day1::new("data_aoc2023/day1.txt"),  // Dec 1
-    &Day2::new("data_aoc2023/day2.txt"),
-    &Day3::new("data_aoc2023/day3.txt"),
-    &Day4::new("data_aoc2023/day4.txt"),
-    &Day5::new("data_aoc2023/day5.txt"),  // Dec 5
-    &Day6::new("data_aoc2023/day6.txt"),
-    &Day7::new("data_aoc2023/day7.txt"),
-    &Day8::new("data_aoc2023/day8.txt"),
-    &Day9::new("data_aoc2023/day9.txt"),
-    &Day10::new("data_aoc2023/day10.txt"),  // Dec 10
-    &Day11::new("data_aoc2023/day11.txt"),
-    &Day12::new("data_aoc2023/day12.txt"),
-    &Day13::new("data_aoc2023/day13.txt"),
-    &Day14::new("data_aoc2023/day14.txt"),
-    &Day15::new("data_aoc2023/day15.txt"),  // Dec 15
-    &Day16::new("data_aoc2023/day16.txt"),
-    &Day17::new("data_aoc2023/day17.txt"),
-    &Day18::new("data_aoc2023/day18.txt"),
-    &Day19::new("data_aoc2023/day19.txt"),
-    &Day20::new("data_aoc2023/day20.txt"),  // Dec 20
-    &Day21::new("data_aoc2023/day21.txt"),
-    &Day22::new("data_aoc2023/day22.txt"),
-    &Day23::new("data_aoc2023/day23.txt"),
-    &Day24::new("data_aoc2023/day24.txt"),
-    &Day25::new("data_aoc2023/day25.txt"),  // Dec 25
+static DAYS: [&dyn Day; 25] = [
+    &Day1::new(DAY1_INPUT),  // Dec 1
+    &Day2::new(DAY2_INPUT),
+    &Day3::new(DAY3_INPUT),
+    &Day4::new(DAY4_INPUT),
+    &Day5::new(DAY5_INPUT),
+    &Day6::new(DAY6_INPUT),
+    &Day7::new(DAY7_INPUT),
+    &Day8::new(DAY8_INPUT),
+    &Day9::new(DAY9_INPUT),
+    &Day10::new(DAY10_INPUT),
+    &Day11::new(DAY11_INPUT),
+    &Day12::new(DAY12_INPUT),
+    &Day13::new(DAY13_INPUT),
+    &Day14::new(DAY14_INPUT),
+    &Day15::new(DAY15_INPUT),
+    &Day16::new(DAY16_INPUT),
+    &Day17::new(DAY17_INPUT),
+    &Day18::new(DAY18_INPUT),
+    &Day19::new(DAY19_INPUT),
+    &Day20::new(DAY20_INPUT),
+    &Day21::new(DAY21_INPUT),
+    &Day22::new(DAY22_INPUT),
+    &Day23::new(DAY23_INPUT),
+    &Day24::new(DAY24_INPUT),
+    &Day25::new(DAY25_INPUT),
 ];
 
 fn main() {
-    println!("Advent of Code 2023!\n");
+    println!("Advent of Code 2024!\n");
 
-    let target_day = 0;
+    let target_day = 1;
 
     match target_day {
         0 => {
             // report all days
             println!("{:7} {:>16} {:>16}", "", "Part 1", "Part 2");
             for day_no in 1..=25 {
-                report_day(DAYS[day_no], day_no);
+                report_day(DAYS[day_no-1], day_no);
             }
         }
-        1..=25 => {
+        1..=1 => {
             // report a specific day
-            report_day(DAYS[target_day], target_day);
+            report_day(DAYS[target_day-1], target_day);
         }
         _ => {
             // invalid day 
@@ -132,319 +152,44 @@ fn main() {
 
 #[cfg(test)]
 mod test {
-    use crate::day::{Day, Answer};
+    use crate::day::Answer;
     use crate::DAYS;
 
-    #[test]
-    fn test_day0_part1() {
-        let d: &dyn Day = DAYS[0];
-        assert_eq!(d.part1(), Answer::None);
-    }
+    const ANSWERS: [(Answer, Answer); 25] = [
+        (Answer::Numeric(2000468), Answer::Numeric(18567089)),   // Dec 1
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+        (Answer::None, Answer::None),
+    ];
 
     #[test]
-    fn test_day0_part2() {
-        let d: &dyn Day = DAYS[0];
-        assert_eq!(d.part2(), Answer::None);
-    }
-
-    #[test]
-    fn test_day1_part1() {
-        let d: &dyn Day = DAYS[1];
-        assert_eq!(d.part1(), Answer::Numeric(55029));
-    }
-
-    #[test]
-    fn test_day1_part2() {
-        let d: &dyn Day = DAYS[1];
-        assert_eq!(d.part2(), Answer::Numeric(55686));  // Not 55680
-    }
-
-    #[test]
-    fn test_day2_part1() {
-        let d: &dyn Day = DAYS[2];
-        assert_eq!(d.part1(), Answer::Numeric(1853));
-    }
-
-    #[test]
-    fn test_day2_part2() {
-        let d: &dyn Day = DAYS[2];
-        assert_eq!(d.part2(), Answer::Numeric(72706));
-    }
-
-    #[test]
-    fn test_day3_part1() {
-        let d: &dyn Day = DAYS[3];
-        assert_ne!(d.part1(), Answer::Numeric(508789));
-        assert_eq!(d.part1(), Answer::Numeric(525911));
-    }
-
-    #[test]
-    fn test_day3_part2() {
-        let d: &dyn Day = DAYS[3];
-        assert_eq!(d.part2(), Answer::Numeric(75805607));
-    }
-
-    #[test]
-    fn test_day4_part1() {
-        let d: &dyn Day = DAYS[4];
-        assert_eq!(d.part1(), Answer::Numeric(24160));
-    }
-
-    #[test]
-    fn test_day4_part2() {
-        let d: &dyn Day = DAYS[4];
-        assert_eq!(d.part2(), Answer::Numeric(5659035));
-    }
-    
-    #[test]
-    fn test_day5_part1() {
-        let d: &dyn Day = DAYS[5];
-        assert_eq!(d.part1(), Answer::Numeric(51752125));
-    }
-    
-    #[test]
-    fn test_day5_part2() {
-        let d: &dyn Day = DAYS[5];
-        assert_eq!(d.part2(), Answer::Numeric(12634632));
-    }
-        
-    #[test]
-    fn test_day6_part1() {
-        let d: &dyn Day = DAYS[6];
-        assert_eq!(d.part1(), Answer::Numeric(840336));
-    }
-    
-    #[test]
-    fn test_day6_part2() {
-        let d: &dyn Day = DAYS[6];
-        assert_eq!(d.part2(), Answer::Numeric(41382569));
-    }
-        
-    #[test]
-    fn test_day7_part1() {
-        let d: &dyn Day = DAYS[7];
-        assert_eq!(d.part1(), Answer::Numeric(255048101));
-    }
-    
-    #[test]
-    fn test_day7_part2() {
-        let d: &dyn Day = DAYS[7];
-        assert_eq!(d.part2(), Answer::Numeric(253718286));
-    }
-        
-    #[test]
-    fn test_day8_part1() {
-        let d: &dyn Day = DAYS[8];
-        assert_eq!(d.part1(), Answer::Numeric(19783));
-    }
-    
-    #[test]
-    fn test_day8_part2() {
-        let d: &dyn Day = DAYS[8];
-        assert_eq!(d.part2(), Answer::Numeric(9177460370549));
-    }
-        
-    #[test]
-    fn test_day9_part1() {
-        let d: &dyn Day = DAYS[9];
-        assert_eq!(d.part1(), Answer::Numeric(1955513104));
-    }
-    
-    #[test]
-    fn test_day9_part2() {
-        let d: &dyn Day = DAYS[9];
-        assert_eq!(d.part2(), Answer::Numeric(1131));
-    }
-        
-    #[test]
-    fn test_day10_part1() {
-        let d: &dyn Day = DAYS[10];
-        assert_eq!(d.part1(), Answer::Numeric(6860));
-    }
-    
-    #[test]
-    fn test_day10_part2() {
-        let d: &dyn Day = DAYS[10];
-        assert_eq!(d.part2(), Answer::Numeric(343));
-    }
-        
-    #[test]
-    fn test_day11_part1() {
-        let d: &dyn Day = DAYS[11];
-        assert_eq!(d.part1(), Answer::Numeric(9799681));
-    }
-    
-    #[test]
-    fn test_day11_part2() {
-        let d: &dyn Day = DAYS[11];
-        assert_eq!(d.part2(), Answer::Numeric(513171773355));
-    }
-        
-    #[test]
-    fn test_day12_part1() {
-        let d: &dyn Day = DAYS[12];
-        assert_eq!(d.part1(), Answer::Numeric(7221));
-    }
-    
-    #[test]
-    fn test_day12_part2() {
-        let d: &dyn Day = DAYS[12];
-        assert_eq!(d.part2(), Answer::Numeric(7139671893722));
-    }
-        
-    #[test]
-    fn test_day13_part1() {
-        let d: &dyn Day = DAYS[13];
-        assert_eq!(d.part1(), Answer::Numeric(33047));
-    }
-    
-    #[test]
-    fn test_day13_part2() {
-        let d: &dyn Day = DAYS[13];
-        assert_eq!(d.part2(), Answer::Numeric(28806));
-    }
-        
-    #[test]
-    fn test_day14_part1() {
-        let d: &dyn Day = DAYS[14];
-        assert_eq!(d.part1(), Answer::Numeric(113456));
-    }
-    
-    #[test]
-    fn test_day14_part2() {
-        let d: &dyn Day = DAYS[14];
-        assert_eq!(d.part2(), Answer::Numeric(118747));
-    }
-        
-    #[test]
-    fn test_day15_part1() {
-        let d: &dyn Day = DAYS[15];
-        assert_eq!(d.part1(), Answer::Numeric(515495));
-    }
-    
-    #[test]
-    fn test_day15_part2() {
-        let d: &dyn Day = DAYS[15];
-        assert_eq!(d.part2(), Answer::Numeric(229349));
-    }
-        
-    #[test]
-    fn test_day16_part1() {
-        let d: &dyn Day = DAYS[16];
-        assert_eq!(d.part1(), Answer::Numeric(7951));
-    }
-    
-    #[test]
-    fn test_day16_part2() {
-        let d: &dyn Day = DAYS[16];
-        assert_eq!(d.part2(), Answer::Numeric(8148));
-    }
-        
-    #[test]
-    fn test_day17_part1() {
-        let d: &dyn Day = DAYS[17];
-        assert_eq!(d.part1(), Answer::Numeric(1263));
-    }
-    
-    #[test]
-    fn test_day17_part2() {
-        let d: &dyn Day = DAYS[17];
-        assert_eq!(d.part2(), Answer::Numeric(1411)); // 1408 too low achieved by reversing dir.
-    }
-        
-    #[test]
-    fn test_day18_part1() {
-        let d: &dyn Day = DAYS[18];
-        assert_eq!(d.part1(), Answer::Numeric(47527));
-    }
-    
-    #[test]
-    fn test_day18_part2() {
-        let d: &dyn Day = DAYS[18];
-        assert_eq!(d.part2(), Answer::Numeric(52240187443190));
-    }
-        
-    #[test]
-    fn test_day19_part1() {
-        let d: &dyn Day = DAYS[19];
-        assert_eq!(d.part1(), Answer::Numeric(377025));
-    }
-    
-    #[test]
-    fn test_day19_part2() {
-        let d: &dyn Day = DAYS[19];
-        assert_eq!(d.part2(), Answer::Numeric(135506683246673));
-    }
-        
-    #[test]
-    fn test_day20_part1() {
-        let d: &dyn Day = DAYS[20];
-        assert_eq!(d.part1(), Answer::Numeric(730797576));  // > 345110400
-    }
-    
-    #[test]
-    fn test_day20_part2() {
-        let d: &dyn Day = DAYS[20];
-        assert_eq!(d.part2(), Answer::Numeric(226732077152351)); // < 226732077152352
-    }
-        
-    #[test]
-    fn test_day21_part1() {
-        let d: &dyn Day = DAYS[21];
-        assert_eq!(d.part1(), Answer::Numeric(3724));
-    }
-            
-    #[test]
-    fn test_day21_part2() {
-        let d: &dyn Day = DAYS[21];
-        assert_eq!(d.part2(), Answer::None);
-    }
-    
-    #[test]
-    fn test_day22_part1() {
-        let d: &dyn Day = DAYS[22];
-        assert_eq!(d.part1(), Answer::None);
-    }
-        
-    #[test]
-    fn test_day22_part2() {
-        let d: &dyn Day = DAYS[22];
-        assert_eq!(d.part2(), Answer::None);
-    }
-        
-    #[test]
-    fn test_day23_part1() {
-        let d: &dyn Day = DAYS[23];
-        assert_eq!(d.part1(), Answer::None);
-    }
-            
-    #[test]
-    fn test_day23_part2() {
-        let d: &dyn Day = DAYS[23];
-        assert_eq!(d.part2(), Answer::None);
-    }
-    
-    #[test]
-    fn test_day24_part1() {
-        let d: &dyn Day = DAYS[24];
-        assert_eq!(d.part1(), Answer::None);
-    }    
-    #[test]
-    fn test_day24_part2() {
-        let d: &dyn Day = DAYS[24];
-        assert_eq!(d.part2(), Answer::None);
-    }
-        
-    #[test]
-    fn test_day25_part1() {
-        let d: &dyn Day = DAYS[25];
-        assert_eq!(d.part1(), Answer::None);
-    }
-    
-    #[test]
-    fn test_day25_part2() {
-        let d: &dyn Day = DAYS[25];
-        assert_eq!(d.part2(), Answer::None);
+    fn test_all() {
+        for day in 1..25 {
+            let d = DAYS[day-1];
+            assert_eq!(d.part1(), ANSWERS[day-1].0);
+            assert_eq!(d.part2(), ANSWERS[day-1].1);
+        }
     }
 
 }
