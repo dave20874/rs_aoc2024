@@ -157,7 +157,7 @@ mod test {
 
     const ANSWERS: [(Answer, Answer); 25] = [
         (Answer::Numeric(2000468), Answer::Numeric(18567089)),   // Dec 1
-        (Answer::None, Answer::None),
+        (Answer::Numeric(663), Answer::Numeric(692)),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
