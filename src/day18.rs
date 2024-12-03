@@ -16,17 +16,16 @@ struct Input {
 
 }
 
-pub struct Day18<'a> {
-    input: &'a str,
+pub struct Day18 {
 }
 
 // Day 18
-impl<'a> Day18<'a> {
-    pub const fn new(input: &'a str) -> Self {
-        Self { input: input }
+impl Day18 {
+    pub const fn new() -> Self {
+        Self {  }
     }
 
-    fn read_input(_input: &'a str) -> Input
+    fn read_input(_input: &str) -> Input
     {
         // TODO
 
@@ -34,17 +33,17 @@ impl<'a> Day18<'a> {
     }
 }
 
-impl<'a> Day for Day18<'a> {
+impl Day for Day18 {
 
     // Compute Part 1 solution
-    fn part1(&self) -> Answer {
-        let _input = Self::read_input(self.input);
+    fn part1(&self, input: &str) -> Answer {
+        let _input = Self::read_input(input);
 
         Answer::None
     }
 
-    fn part2(&self) -> Answer {
-        let _input = Self::read_input(self.input);
+    fn part2(&self, input: &str) -> Answer {
+        let _input = Self::read_input(input);
 
         Answer::None
     }
@@ -73,16 +72,16 @@ mod test {
     // Compute part 1 result on example 1 and confirm expected value.
     fn test_part1() {
         // Based on the example in part 1.
-        let d= Day18::new(EXAMPLE1);
-        assert_eq!(d.part1(), Answer::None);
+        let d= Day18::new();
+        assert_eq!(d.part1(EXAMPLE1), Answer::None);
     }
 
     #[test]
     // Compute part 2 result on example 2 and confirm expected value.
     fn test_part2() {
         // Based on the example in part 2.
-        let d = Day18::new(EXAMPLE1);
-        assert_eq!(d.part2(), Answer::None);
+        let d = Day18::new();
+        assert_eq!(d.part2(EXAMPLE1), Answer::None);
     }
     
 }

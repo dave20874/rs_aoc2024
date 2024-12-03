@@ -19,17 +19,16 @@ struct Input {
     right: Vec<isize>,
 }
 
-pub struct Day1<'a> {
-    input: &'a str,
+pub struct Day1 {
 }
 
 // Day1
-impl<'a> Day1<'a> {
-    pub const fn new(input: &'a str) -> Self {
-        Self { input: input }
+impl Day1 {
+    pub const fn new() -> Self {
+        Self { }
     }
 
-    fn read_input(input: &'a str) -> Input
+    fn read_input(input: &str) -> Input
     {
         let mut left: Vec<isize> = Vec::new();
         let mut right: Vec<isize> = Vec::new();
@@ -56,11 +55,11 @@ impl<'a> Day1<'a> {
     }
 }
 
-impl<'a> Day for Day1<'a> {
+impl Day for Day1 {
 
     // Compute Part 1 solution
-    fn part1(&self) -> Answer {
-        let input = Self::read_input(self.input);
+    fn part1(&self, input: &str) -> Answer {
+        let input = Self::read_input(input);
 
         let dist_sum: isize = zip(&input.left, &input.right)
             .map(|pair| { (pair.0-pair.1).abs() }) 
@@ -69,13 +68,13 @@ impl<'a> Day for Day1<'a> {
         Answer::Numeric(dist_sum as usize)
     }
 
-    fn part2(&self) -> Answer {
+    fn part2(&self, input: &str) -> Answer {
 
         // Read input file into Input struct, then sum the results.
    
         // (The diff between part1 and part2 is the flag passed to read_input.  It
         // interprets numbers embedded in lines differently for each part.)
-        let input = Self::read_input(self.input);
+        let input = Self::read_input(input);
 
         let similarity = input.left.iter().map(|l| {
             let match_count = input.right.iter().filter(|r| {l == *r}).count();
@@ -87,14 +86,13 @@ impl<'a> Day for Day1<'a> {
 }
 
 #[cfg(test)]
-
 mod test {
 
     use crate::day1::Day1;
     use crate::day::{Day, Answer};
     
-    const EXAMPLE1: &str =
-"3   4
+    const EXAMPLE1: &str = "\
+3   4
 4   3
 2   5
 1   3
@@ -121,8 +119,8 @@ mod test {
     // Compute part 1 result on example 1 and confirm expected value.
     fn test_part1() {
         // Based on the example in part 1.
-        let d: Day1 = Day1::new(EXAMPLE1);
-        assert_eq!(d.part1(), Answer::Numeric(11));
+        let d: Day1 = Day1::new();
+        assert_eq!(d.part1(EXAMPLE1), Answer::Numeric(11));
     }
 
 
@@ -130,8 +128,8 @@ mod test {
     // Compute part 2 result on example 2 and confirm expected value.
     fn test_part2() {
         // Based on the example in part 2.
-        let d: Day1 = Day1::new(EXAMPLE1);
-        assert_eq!(d.part2(), Answer::Numeric(31));
+        let d: Day1 = Day1::new();
+        assert_eq!(d.part2(EXAMPLE1), Answer::Numeric(31));
     }
     
 }

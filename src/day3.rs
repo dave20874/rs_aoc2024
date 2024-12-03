@@ -16,17 +16,16 @@ struct Input {
 
 }
 
-pub struct Day3<'a> {
-    input: &'a str,
+pub struct Day3 {
 }
 
 // Day3
-impl<'a> Day3<'a> {
-    pub const fn new(input: &'a str) -> Self {
-        Self { input: input }
+impl Day3 {
+    pub const fn new() -> Self {
+        Self { }
     }
 
-    fn read_input(_input: &'a str) -> Input
+    fn read_input(_input: &str) -> Input
     {
         // TODO
 
@@ -34,17 +33,17 @@ impl<'a> Day3<'a> {
     }
 }
 
-impl<'a> Day for Day3<'a> {
+impl<'a> Day for Day3 {
 
     // Compute Part 1 solution
-    fn part1(&self) -> Answer {
-        let _input = Self::read_input(self.input);
+    fn part1(&self, input: &str) -> Answer {
+        let _input = Self::read_input(input);
 
         Answer::None
     }
 
-    fn part2(&self) -> Answer {
-        let _input = Self::read_input(self.input);
+    fn part2(&self, input: &str) -> Answer {
+        let _input = Self::read_input(input);
 
         Answer::None
     }
@@ -57,15 +56,16 @@ mod test {
     use crate::day3::Day3;
     use crate::day::{Day, Answer};
     
-    const EXAMPLE1: &str =
-"// TODO Place example inputs here.
+    // TODO Place example inputs here.
+    const EXAMPLE1: &str = "\
 ";
 
     #[test]
     // Read and confirm inputs
     fn test_read() {
         let _input = Day3::read_input(EXAMPLE1);
-                
+
+        // TODO-DW : Verify that inputs were read successfully.
         // assert_eq!(input.left.len(), 6);
     }
 
@@ -73,16 +73,16 @@ mod test {
     // Compute part 1 result on example 1 and confirm expected value.
     fn test_part1() {
         // Based on the example in part 1.
-        let d= Day3::new(EXAMPLE1);
-        assert_eq!(d.part1(), Answer::None);
+        let d= Day3::new();
+        assert_eq!(d.part1(EXAMPLE1), Answer::None);
     }
 
     #[test]
     // Compute part 2 result on example 2 and confirm expected value.
     fn test_part2() {
         // Based on the example in part 2.
-        let d = Day3::new(EXAMPLE1);
-        assert_eq!(d.part2(), Answer::None);
+        let d = Day3::new();
+        assert_eq!(d.part2(EXAMPLE1), Answer::None);
     }
     
 }

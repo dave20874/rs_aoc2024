@@ -8,11 +8,11 @@ pub enum Answer {
 
 pub trait Day: Sync {
 
-    fn part1(&self) -> Answer {
+    fn part1(&self, _input: &str) -> Answer {
         Answer::None
     }
 
-    fn part2(&self) -> Answer {
+    fn part2(&self, _input: &str) -> Answer {
         Answer::None
     }
 }

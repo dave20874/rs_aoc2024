@@ -78,16 +78,46 @@ use data_aoc2024::DAY23_INPUT;
 use data_aoc2024::DAY24_INPUT;
 use data_aoc2024::DAY25_INPUT;
 
-fn report_day(day: &dyn Day, day_no: usize) {
+static DAYS: [(&dyn Day, &str); 25] = [
+    (&Day1::new(), DAY1_INPUT),  // Dec 1
+    (&Day2::new(), DAY2_INPUT),
+    (&Day3::new(), DAY3_INPUT),
+    (&Day4::new(), DAY4_INPUT),
+    (&Day5::new(), DAY5_INPUT),
+    (&Day6::new(), DAY6_INPUT),
+    (&Day7::new(), DAY7_INPUT),
+    (&Day8::new(), DAY8_INPUT),
+    (&Day9::new(), DAY9_INPUT),
+    (&Day10::new(), DAY10_INPUT),
+    (&Day11::new(), DAY11_INPUT),
+    (&Day12::new(), DAY12_INPUT),
+    (&Day13::new(), DAY13_INPUT),
+    (&Day14::new(), DAY14_INPUT),
+    (&Day15::new(), DAY15_INPUT),
+    (&Day16::new(), DAY16_INPUT),
+    (&Day17::new(), DAY17_INPUT),
+    (&Day18::new(), DAY18_INPUT),
+    (&Day19::new(), DAY19_INPUT),
+    (&Day20::new(), DAY20_INPUT),
+    (&Day21::new(), DAY21_INPUT),
+    (&Day22::new(), DAY22_INPUT),
+    (&Day23::new(), DAY23_INPUT),
+    (&Day24::new(), DAY24_INPUT),
+    (&Day25::new(), DAY25_INPUT),
+];
+
+fn report_day(day_no: usize) {
     
-    let ans1 = day.part1();
+    let (day, input) = DAYS[day_no-1];
+
+    let ans1 = day.part1(input);
     let msg1 = match ans1 {
         Answer::None => String::from("No Answer"),
         Answer::Numeric(n) => format!("{n}"),
         Answer::String(s) => format!("{s}"),
     };
 
-    let ans2 = day.part2();
+    let ans2 = day.part2(input);
     let msg2 = match ans2 {
         Answer::None => String::from("No Answer"),
         Answer::Numeric(n) => format!("{n}"),
@@ -96,33 +126,6 @@ fn report_day(day: &dyn Day, day_no: usize) {
     println!("Day {day_no:2}: {msg1:>16} {msg2:>16}");
 }
 
-static DAYS: [&dyn Day; 25] = [
-    &Day1::new(DAY1_INPUT),  // Dec 1
-    &Day2::new(DAY2_INPUT),
-    &Day3::new(DAY3_INPUT),
-    &Day4::new(DAY4_INPUT),
-    &Day5::new(DAY5_INPUT),
-    &Day6::new(DAY6_INPUT),
-    &Day7::new(DAY7_INPUT),
-    &Day8::new(DAY8_INPUT),
-    &Day9::new(DAY9_INPUT),
-    &Day10::new(DAY10_INPUT),
-    &Day11::new(DAY11_INPUT),
-    &Day12::new(DAY12_INPUT),
-    &Day13::new(DAY13_INPUT),
-    &Day14::new(DAY14_INPUT),
-    &Day15::new(DAY15_INPUT),
-    &Day16::new(DAY16_INPUT),
-    &Day17::new(DAY17_INPUT),
-    &Day18::new(DAY18_INPUT),
-    &Day19::new(DAY19_INPUT),
-    &Day20::new(DAY20_INPUT),
-    &Day21::new(DAY21_INPUT),
-    &Day22::new(DAY22_INPUT),
-    &Day23::new(DAY23_INPUT),
-    &Day24::new(DAY24_INPUT),
-    &Day25::new(DAY25_INPUT),
-];
 
 fn main() {
     println!("Advent of Code 2024!\n");
@@ -134,12 +137,12 @@ fn main() {
             // report all days
             println!("{:7} {:>16} {:>16}", "", "Part 1", "Part 2");
             for day_no in 1..=25 {
-                report_day(DAYS[day_no-1], day_no);
+                report_day(day_no);
             }
         }
         1..=1 => {
             // report a specific day
-            report_day(DAYS[target_day-1], target_day);
+            report_day(target_day);
         }
         _ => {
             // invalid day 
@@ -186,9 +189,9 @@ mod test {
     #[test]
     fn test_all() {
         for day in 1..25 {
-            let d = DAYS[day-1];
-            assert_eq!(d.part1(), ANSWERS[day-1].0);
-            assert_eq!(d.part2(), ANSWERS[day-1].1);
+            let (d, input) = DAYS[day-1];
+            assert_eq!(d.part1(input), ANSWERS[day-1].0);
+            assert_eq!(d.part2(input), ANSWERS[day-1].1);
         }
     }
 

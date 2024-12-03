@@ -20,8 +20,7 @@ struct Input {
     reports: Vec<Report>,
 }
 
-pub struct Day2<'a> {
-    input: &'a str,
+pub struct Day2 {
 }
 
 fn is_safe(report: &Vec<usize>) -> bool {
@@ -76,12 +75,12 @@ fn is_damped_safe(report: &Vec<usize>) -> bool {
 }
 
 // Day2
-impl<'a> Day2<'a> {
-    pub const fn new(input: &'a str) -> Self {
-        Self { input: input }
+impl Day2 {
+    pub const fn new() -> Self {
+        Self { }
     }
 
-    fn read_input(input: &'a str) -> Input
+    fn read_input(input: & str) -> Input
     {
         let mut reports: Vec<Report> = Vec::new();
         for line in input.lines() {
@@ -97,19 +96,19 @@ impl<'a> Day2<'a> {
     }
 }
 
-impl<'a> Day for Day2<'a> {
+impl Day for Day2 {
 
     // Compute Part 1 solution
-    fn part1(&self) -> Answer {
-        let input = Self::read_input(self.input);
+    fn part1(&self, input: &str) -> Answer {
+        let input = Self::read_input(input);
 
         let num_safe = input.reports.iter().filter(|r| is_safe(&r.values)).count();
 
         Answer::Numeric(num_safe)
     }
 
-    fn part2(&self) -> Answer {
-        let input = Self::read_input(self.input);
+    fn part2(&self, input: &str) -> Answer {
+        let input = Self::read_input(input);
 
         let num_safe = input.reports.iter().filter(|r| is_damped_safe(&r.values)).count();
 
@@ -170,16 +169,16 @@ mod test {
     // Compute part 1 result on example 1 and confirm expected value.
     fn test_part1() {
         // Based on the example in part 1.
-        let d= Day2::new(EXAMPLE1);
-        assert_eq!(d.part1(), Answer::Numeric(2));
+        let d= Day2::new();
+        assert_eq!(d.part1(EXAMPLE1), Answer::Numeric(2));
     }
 
     #[test]
     // Compute part 2 result on example 2 and confirm expected value.
     fn test_part2() {
         // Based on the example in part 2.
-        let d = Day2::new(EXAMPLE1);
-        assert_eq!(d.part2(), Answer::Numeric(4));
+        let d = Day2::new();
+        assert_eq!(d.part2(EXAMPLE1), Answer::Numeric(4));
     }
     
 }
