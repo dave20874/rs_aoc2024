@@ -19,21 +19,13 @@ struct Input {
     right: Vec<isize>,
 }
 
-pub struct Day1 {
-}
-
-// Day1
-impl Day1 {
-    pub const fn new() -> Self {
-        Self { }
-    }
-
-    fn read_input(input: &str) -> Input
+impl Input {
+    fn read(text: &str) -> Input 
     {
         let mut left: Vec<isize> = Vec::new();
         let mut right: Vec<isize> = Vec::new();
 
-        for line in input.lines() {
+        for line in text.lines() {
             match LINE_RE.captures(line) {                    
                 Some(captures) => {
                     let a = captures[1].parse().unwrap();
@@ -55,11 +47,21 @@ impl Day1 {
     }
 }
 
+pub struct Day1 {
+}
+
+// Day1
+impl Day1 {
+    pub const fn new() -> Self {
+        Self { }
+    }
+}
+
 impl Day for Day1 {
 
     // Compute Part 1 solution
-    fn part1(&self, input: &str) -> Answer {
-        let input = Self::read_input(input);
+    fn part1(&self, text: &str) -> Answer {
+        let input = Input::read(text);
 
         let dist_sum: isize = zip(&input.left, &input.right)
             .map(|pair| { (pair.0-pair.1).abs() }) 
@@ -68,16 +70,17 @@ impl Day for Day1 {
         Answer::Numeric(dist_sum as usize)
     }
 
-    fn part2(&self, input: &str) -> Answer {
+    fn part2(&self, text: &str) -> Answer {
 
         // Read input file into Input struct, then sum the results.
    
         // (The diff between part1 and part2 is the flag passed to read_input.  It
         // interprets numbers embedded in lines differently for each part.)
-        let input = Self::read_input(input);
+        let input = Input::read(text);
 
         let similarity = input.left.iter().map(|l| {
             let match_count = input.right.iter().filter(|r| {l == *r}).count();
+            
             *l as usize * match_count
         }).sum();
 
@@ -88,7 +91,7 @@ impl Day for Day1 {
 #[cfg(test)]
 mod test {
 
-    use crate::day1::Day1;
+    use crate::day1::{Day1, Input};
     use crate::day::{Day, Answer};
     
     const EXAMPLE1: &str = "\
@@ -103,7 +106,7 @@ mod test {
     #[test]
     // Read part 1 example and confirm inputs
     fn test_read_part1() {
-        let input = Day1::read_input(EXAMPLE1);
+        let input = Input::read(EXAMPLE1);
                 
         assert_eq!(input.left.len(), 6);
         assert_eq!(input.right.len(), 6);

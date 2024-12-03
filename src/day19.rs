@@ -16,34 +16,34 @@ struct Input {
 
 }
 
-pub struct Day19 {
-}
-
-// Day 19
-impl Day19 {
-    pub const fn new() -> Self {
-        Self {  }
-    }
-
-    fn read_input(_input: &str) -> Input
+impl Input {
+    fn read(_text: &str) -> Input
     {
-        // TODO
-
         Input { }
     }
 }
 
-impl Day for Day19 {
+pub struct Day19 {
+}
+
+// Day19
+impl Day19 {
+    pub const fn new() -> Self {
+        Self { }
+    }
+}
+
+impl<'a> Day for Day19 {
 
     // Compute Part 1 solution
-    fn part1(&self, input: &str) -> Answer {
-        let _input = Self::read_input(input);
+    fn part1(&self, text: &str) -> Answer {
+        let _input = Input::read(text);
 
         Answer::None
     }
 
-    fn part2(&self, input: &str) -> Answer {
-        let _input = Self::read_input(input);
+    fn part2(&self, text: &str) -> Answer {
+        let _input = Input::read(text);
 
         Answer::None
     }
@@ -53,18 +53,19 @@ impl Day for Day19 {
 
 mod test {
 
-    use crate::day19::Day19;
+    use crate::day19::{Day19, Input};
     use crate::day::{Day, Answer};
     
-    const EXAMPLE1: &str =
-"// TODO Place example inputs here.
+    // TODO Place example inputs here.
+    const EXAMPLE1: &str = "\
 ";
 
     #[test]
     // Read and confirm inputs
     fn test_read() {
-        let _input = Day19::read_input(EXAMPLE1);
-                
+        let _input = Input::read(EXAMPLE1);
+
+        // TODO-DW : Verify that inputs were read successfully.
         // assert_eq!(input.left.len(), 6);
     }
 

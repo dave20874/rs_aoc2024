@@ -20,6 +20,23 @@ struct Input {
     reports: Vec<Report>,
 }
 
+impl Input {
+    fn read(text: &str) -> Input
+    {
+        let mut reports: Vec<Report> = Vec::new();
+        for line in text.lines() {
+            let values: Vec<usize> = LINE_RE.find_iter(line)
+                .map(|m| m.as_str()
+                    .parse::<usize>().unwrap())
+                .collect();
+
+            reports.push(Report { values });
+        }
+
+        Input { reports }
+    }
+}
+
 pub struct Day2 {
 }
 
@@ -79,36 +96,21 @@ impl Day2 {
     pub const fn new() -> Self {
         Self { }
     }
-
-    fn read_input(input: & str) -> Input
-    {
-        let mut reports: Vec<Report> = Vec::new();
-        for line in input.lines() {
-            let values: Vec<usize> = LINE_RE.find_iter(line)
-                .map(|m| m.as_str()
-                    .parse::<usize>().unwrap())
-                .collect();
-
-            reports.push(Report { values });
-        }
-
-        Input { reports }
-    }
 }
 
 impl Day for Day2 {
 
     // Compute Part 1 solution
-    fn part1(&self, input: &str) -> Answer {
-        let input = Self::read_input(input);
+    fn part1(&self, text: &str) -> Answer {
+        let input = Input::read(text);
 
         let num_safe = input.reports.iter().filter(|r| is_safe(&r.values)).count();
 
         Answer::Numeric(num_safe)
     }
 
-    fn part2(&self, input: &str) -> Answer {
-        let input = Self::read_input(input);
+    fn part2(&self, text: &str) -> Answer {
+        let input = Input::read(text);
 
         let num_safe = input.reports.iter().filter(|r| is_damped_safe(&r.values)).count();
 
@@ -120,7 +122,7 @@ impl Day for Day2 {
 
 mod test {
 
-    use crate::day2::{Day2, is_safe, is_damped_safe};
+    use crate::day2::{Day2, Input, is_safe, is_damped_safe};
     use crate::day::{Day, Answer};
     
     const EXAMPLE1: &str =
@@ -135,7 +137,7 @@ mod test {
     #[test]
     // Read and confirm inputs
     fn test_read() {
-        let input = Day2::read_input(EXAMPLE1);
+        let input = Input::read(EXAMPLE1);
                 
         assert_eq!(input.reports.len(), 6);
         assert_eq!(input.reports[0].values.len(), 5);
@@ -144,7 +146,7 @@ mod test {
     #[test]
     // Read and confirm inputs
     fn test_safety() {
-        let input = Day2::read_input(EXAMPLE1);
+        let input = Input::read(EXAMPLE1);
 
         let expected = [true, false, false, false, false, true];
 
@@ -156,7 +158,7 @@ mod test {
     #[test]
     // Read and confirm inputs
     fn test_damped_safety() {
-        let input = Day2::read_input(EXAMPLE1);
+        let input = Input::read(EXAMPLE1);
 
         let expected = [true, false, false, true, true, true];
 
