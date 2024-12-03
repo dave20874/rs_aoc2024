@@ -198,7 +198,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rs_aoc2023"
+name = "rs_aoc2024"
 version = "0.1.0"
 dependencies = [
  "data_aoc2024",
