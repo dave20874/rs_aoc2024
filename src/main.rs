@@ -108,18 +108,18 @@ static DAYS: [(&dyn Day, &str); 25] = [
 
 fn report_day(day_no: usize) {
     
-    let (day, input) = DAYS[day_no-1];
+    let (day, text) = DAYS[day_no-1];
 
-    let ans1 = day.part1(input);
+    let ans1 = day.part1(text);
     let msg1 = match ans1 {
-        Answer::None => String::from("No Answer"),
+        Answer::None => String::from("        -"),
         Answer::Numeric(n) => format!("{n}"),
         Answer::String(s) => format!("{s}"),
     };
 
-    let ans2 = day.part2(input);
+    let ans2 = day.part2(text);
     let msg2 = match ans2 {
-        Answer::None => String::from("No Answer"),
+        Answer::None => String::from("        -"),
         Answer::Numeric(n) => format!("{n}"),
         Answer::String(s) => format!("{s}"),
     };
@@ -130,7 +130,7 @@ fn report_day(day_no: usize) {
 fn main() {
     println!("Advent of Code 2024!\n");
 
-    let target_day = 1;
+    let target_day = 0;
 
     match target_day {
         0 => {
@@ -140,7 +140,7 @@ fn main() {
                 report_day(day_no);
             }
         }
-        1..=1 => {
+        1..=25 => {
             // report a specific day
             report_day(target_day);
         }
@@ -161,7 +161,7 @@ mod test {
     const ANSWERS: [(Answer, Answer); 25] = [
         (Answer::Numeric(2000468), Answer::Numeric(18567089)),   // Dec 1
         (Answer::Numeric(663), Answer::Numeric(692)),
-        (Answer::None, Answer::None),
+        (Answer::Numeric(192767529), Answer::Numeric(104083373)),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
@@ -189,9 +189,9 @@ mod test {
     #[test]
     fn test_all() {
         for day in 1..25 {
-            let (d, input) = DAYS[day-1];
-            assert_eq!(d.part1(input), ANSWERS[day-1].0);
-            assert_eq!(d.part2(input), ANSWERS[day-1].1);
+            let (d, text) = DAYS[day-1];
+            assert_eq!(d.part1(text), ANSWERS[day-1].0);
+            assert_eq!(d.part2(text), ANSWERS[day-1].1);
         }
     }
 
