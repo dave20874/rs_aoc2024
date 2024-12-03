@@ -24,60 +24,55 @@ pub struct Day2<'a> {
     input: &'a str,
 }
 
-impl Report {
-    fn is_safe(&self) -> bool {
-        let mut ascending = false;
-        let mut descending = false;
-        let mut equal = false;
-        let mut max_diff = 0;
+fn is_safe(report: &Vec<usize>) -> bool {
+    let mut ascending = false;
+    let mut descending = false;
+    let mut equal = false;
+    let mut max_diff = 0;
 
-
-        for n in 0..self.values.len()-1 {
-            let mut diff = 0;
-            if self.values[n] < self.values[n+1] {
+    for window in report.windows(2) {
+        let a = window[0];
+        let b = window[1];
+        let diff = 
+            if a < b {
                 ascending = true;
-                diff = self.values[n+1] - self.values[n];
+                b - a
             } 
-            else if self.values[n] > self.values[n+1] {
+            else if a > b {
                 descending = true;
-                diff = self.values[n] - self.values[n+1];
+                a - b
             }
             else {
                 equal = true;
-            }
+                0
+            };
 
-            if diff > max_diff {
-                max_diff = diff;
-            }
+        if diff > max_diff {
+            max_diff = diff;
         }
-
-        return !equal & !(ascending & descending) & (max_diff <= 3);
     }
 
-    fn is_damped_safe(&self) -> bool {
-        let mut found_safe = false;
-        let mut shortened_values: Vec<usize> = Vec::new();
+    return !equal & !(ascending & descending) & (max_diff <= 3);
+}
 
-        for skip in 0..self.values.len() {
-            // Construct a set of values without the skipped one.
-            shortened_values.clear();
+fn is_damped_safe(report: &Vec<usize>) -> bool {
+    let mut found_safe = false;
 
-            for n in 0..self.values.len() {
-                if n != skip {
-                    shortened_values.push(self.values[n]);
-                }
-            }
-            let shortened_report = Report { values: shortened_values.clone() };
+    for skip in 0..report.len() {
+        let shortened_values = report.iter()
+            .enumerate()
+            .filter(|(n, _value)| *n != skip)
+            .map(|(_n, value)| *value)
+            .collect();
 
-            if shortened_report.is_safe() {
-                // println!("Found safe with sample {skip} removed: {shortened_values:#?}");
-                found_safe = true;
-                break;
-            }
+        if is_safe(&shortened_values) {
+            // println!("Found safe with sample {skip} removed: {shortened_values:#?}");
+            found_safe = true;
+            break;
         }
-
-        found_safe
     }
+
+    found_safe
 }
 
 // Day2
@@ -108,7 +103,7 @@ impl<'a> Day for Day2<'a> {
     fn part1(&self) -> Answer {
         let input = Self::read_input(self.input);
 
-        let num_safe = input.reports.iter().filter(|r| r.is_safe()).count();
+        let num_safe = input.reports.iter().filter(|r| is_safe(&r.values)).count();
 
         Answer::Numeric(num_safe)
     }
@@ -116,7 +111,7 @@ impl<'a> Day for Day2<'a> {
     fn part2(&self) -> Answer {
         let input = Self::read_input(self.input);
 
-        let num_safe = input.reports.iter().filter(|r| r.is_damped_safe()).count();
+        let num_safe = input.reports.iter().filter(|r| is_damped_safe(&r.values)).count();
 
         Answer::Numeric(num_safe)
     }
@@ -126,7 +121,7 @@ impl<'a> Day for Day2<'a> {
 
 mod test {
 
-    use crate::day2::Day2;
+    use crate::day2::{Day2, is_safe, is_damped_safe};
     use crate::day::{Day, Answer};
     
     const EXAMPLE1: &str =
@@ -151,26 +146,24 @@ mod test {
     // Read and confirm inputs
     fn test_safety() {
         let input = Day2::read_input(EXAMPLE1);
-                
-        assert_eq!(input.reports[0].is_safe(), true);
-        assert_eq!(input.reports[1].is_safe(), false);
-        assert_eq!(input.reports[2].is_safe(), false);
-        assert_eq!(input.reports[3].is_safe(), false);
-        assert_eq!(input.reports[4].is_safe(), false);
-        assert_eq!(input.reports[5].is_safe(), true);
+
+        let expected = [true, false, false, false, false, true];
+
+        for (n, safe) in expected.iter().enumerate() {
+            assert_eq!(is_safe(&input.reports[n].values), *safe);
+        }
     }
 
     #[test]
     // Read and confirm inputs
     fn test_damped_safety() {
         let input = Day2::read_input(EXAMPLE1);
-                
-        assert_eq!(input.reports[0].is_damped_safe(), true);
-        assert_eq!(input.reports[1].is_damped_safe(), false);
-        assert_eq!(input.reports[2].is_damped_safe(), false);
-        assert_eq!(input.reports[3].is_damped_safe(), true);
-        assert_eq!(input.reports[4].is_damped_safe(), true);
-        assert_eq!(input.reports[5].is_damped_safe(), true);
+
+        let expected = [true, false, false, true, true, true];
+
+        for (n, safe) in expected.iter().enumerate() {
+            assert_eq!(is_damped_safe(&input.reports[n].values), *safe);
+        }
     }
 
     #[test]
@@ -178,10 +171,8 @@ mod test {
     fn test_part1() {
         // Based on the example in part 1.
         let d= Day2::new(EXAMPLE1);
-
         assert_eq!(d.part1(), Answer::Numeric(2));
     }
-
 
     #[test]
     // Compute part 2 result on example 2 and confirm expected value.
