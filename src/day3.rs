@@ -5,15 +5,20 @@ use crate::day::{Day, Answer};
 
 
 lazy_static! {
+
+
     // Matches "do()", "don't()" or "mul(NNN,NNN)" with NNN's captured in cap[1] and cap[2]
-    static ref INSTR_RE: Regex = Regex::new("do\\(\\)|don't\\(\\)|mul\\(([\\d]{1,3}),([\\d]{1,3})\\)").unwrap();
+    // Breaking this down, the RE is basically "do() | don't() | mul(NNN, NNN)"
+    // The parens require a lot of escaping and there are no spaces to visibly break up the three
+    // main components, but it's not as complicated as it looks.
+    static ref INSTR_RE: Regex = Regex::new("do\\(\\)|don't\\(\\)|mul\\(([0-9]{1,3}),([0-9]{1,3})\\)").unwrap();
 }
 
 // Three types of instructions we're looking for.
 enum Instr {
-    MUL(usize, usize),
-    DO,
-    DONT,
+    Mul(usize, usize),
+    Do,
+    Dont,
 }
 
 // A representation of the puzzle inputs: A vector of instructions
@@ -32,16 +37,16 @@ impl Input {
                 match &cap[0] {
                     "don't()" => {
                         // println!("Found DONT:: {}", &cap[0]);
-                        instructions.push(Instr::DONT);
+                        instructions.push(Instr::Dont);
                     }
                     "do()" => {
                         // println!("Found DO: {}", &cap[0]);
-                        instructions.push(Instr::DO);
+                        instructions.push(Instr::Do);
                     }
                     _ => {
                         // must be MUL
                         // println!("Found MUL: {}", &cap[0]);
-                        instructions.push(Instr::MUL(cap[1].parse::<usize>().unwrap(), cap[2].parse::<usize>().unwrap()));
+                        instructions.push(Instr::Mul(cap[1].parse::<usize>().unwrap(), cap[2].parse::<usize>().unwrap()));
                     }
                 }
             }
@@ -57,9 +62,9 @@ impl Input {
 
         for instr in &self.instructions {
             match instr {
-                Instr::DO => {}
-                Instr::DONT => {}
-                Instr::MUL(a, b) => {
+                Instr::Do => {}
+                Instr::Dont => {}
+                Instr::Mul(a, b) => {
                     sum += a*b;
                 }
             }
@@ -76,15 +81,15 @@ impl Input {
 
         for instr in &self.instructions {
             match instr {
-                Instr::DO => {
+                Instr::Do => {
                     // println!("Enabling"); 
                     enabled = true;
                 }
-                Instr::DONT => {
+                Instr::Dont => {
                     // println!("Disabling");
                     enabled = false;
                 }
-                Instr::MUL(a, b) => {
+                Instr::Mul(a, b) => {
                     if enabled { 
                         // println!("Enabled to mul {a}, {b}");
                         sum += a*b; 
@@ -111,7 +116,7 @@ impl Day3 {
 }
 
 // Implement the usual interface for daily solver.
-impl<'a> Day for Day3 {
+impl Day for Day3 {
 
     // Compute Part 1 solution
     fn part1(&self, text: &str) -> Answer {
@@ -119,7 +124,7 @@ impl<'a> Day for Day3 {
 
         let sum = input.sum_mul_unconditional();
 
-        Answer::Numeric(sum as usize)
+        Answer::Numeric(sum)
     }
 
     fn part2(&self, text: &str) -> Answer {
@@ -132,7 +137,6 @@ impl<'a> Day for Day3 {
 }
 
 #[cfg(test)]
-
 mod test {
     use crate::day3::{Day3, Input};
     use crate::day::{Day, Answer};
