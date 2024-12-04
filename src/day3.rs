@@ -5,8 +5,6 @@ use crate::day::{Day, Answer};
 
 
 lazy_static! {
-
-
     // Matches "do()", "don't()" or "mul(NNN,NNN)" with NNN's captured in cap[1] and cap[2]
     // Breaking this down, the RE is basically "do() | don't() | mul(NNN, NNN)"
     // The parens require a lot of escaping and there are no spaces to visibly break up the three
