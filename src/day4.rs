@@ -5,7 +5,7 @@ use crate::day::{Day, Answer};
 
 struct Check {
     // Vec of (row_offset, col_offset, char)
-    checks: Vec<(usize, usize, char)>,
+    pub checks: Vec<(usize, usize, char)>,
 }
 
 lazy_static! {
@@ -73,19 +73,16 @@ impl Input {
         true
     }
 
-    fn is_xmas(&self, origin: (usize, usize), orientation: usize) -> bool
-    {
-        self.checks_out(&XMAS_CHECKS, origin, orientation)
-    }
-
     fn total_xmas(&self) -> usize
     {
         let mut count = 0;
 
         for row in 0..self.puzzle.len() {
             for col in 0..self.puzzle[0].len() {
-                for orientation in 0..8 {
-                    if self.is_xmas((row, col), orientation) {
+                let orientations = XMAS_CHECKS.len();
+
+                for orientation in 0..orientations {
+                    if self.checks_out(&XMAS_CHECKS, (row, col), orientation) {
                         count += 1;
                     }
                 }
@@ -95,20 +92,16 @@ impl Input {
         count
     }
     
-    fn is_mas_x(&self, origin: (usize, usize), orientation: usize) -> bool
-    {
-        self.checks_out(&MAS_X_CHECKS, origin, orientation)
-
-    }
-
     fn total_mas_x(&self) -> usize
     {
         let mut count = 0;
 
         for row in 0..self.puzzle.len() {
             for col in 0..self.puzzle[0].len() {
-                for orientation in 0..4 {
-                    if self.is_mas_x((row, col), orientation) {
+                let orientations = MAS_X_CHECKS.len();
+
+                for orientation in 0..orientations {
+                    if self.checks_out(&MAS_X_CHECKS, (row, col), orientation) {
                         count += 1;
                     }
                 }
@@ -149,7 +142,7 @@ impl<'a> Day for Day4 {
 
 mod test {
 
-    use crate::day4::{Day4, Input};
+    use crate::day4::{Day4, Input, XMAS_CHECKS, MAS_X_CHECKS};
     use crate::day::{Day, Answer};
     
     // Example inputs
@@ -183,13 +176,13 @@ MXMXAXMASX
         let input= Input::read(EXAMPLE1);
 
         // Is there XMAS at 0, 0 in orientation 0? No.
-        assert_eq!(input.is_xmas((0, 0), 0), false);
+        assert_eq!(input.checks_out(&XMAS_CHECKS, (0, 0), 0), false);
 
         // Is there XMAS at (0, 5), in orientation 0? Yes.
-        assert_eq!(input.is_xmas((0, 5), 0), true);
+        assert_eq!(input.checks_out(&XMAS_CHECKS, (0, 5), 0), true);
 
         // Is there XMAS at (2, 2), in orientation 1? No.
-        assert_eq!(input.is_xmas((2, 2), 1), false);
+        assert_eq!(input.checks_out(&XMAS_CHECKS, (2, 2), 1), false);
     }
 
     #[test]
@@ -205,13 +198,13 @@ MXMXAXMASX
         let input= Input::read(EXAMPLE1);
 
         // Is there MAS_X centered at 1, 1 in orientation 0? No.
-        assert_eq!(input.is_mas_x((0, 0), 0), false);
+        assert_eq!(input.checks_out(&MAS_X_CHECKS, (0, 0), 0), false);
 
         // Is there XMAS at (1, 2) in orientation 0? Yes.
-        assert_eq!(input.is_mas_x((0, 1), 0), true);
+        assert_eq!(input.checks_out(&MAS_X_CHECKS, (0, 1), 0), true);
 
         // Is there XMAS at (2, 6), in orientation 1? Yes.
-        assert_eq!(input.is_mas_x((1, 5), 1), true);
+        assert_eq!(input.checks_out(&MAS_X_CHECKS, (1, 5), 1), true);
     }
 
     #[test]
