@@ -62,11 +62,9 @@ impl Input {
 
         for instr in &self.instructions {
             match instr {
+                Instr::Mul(a, b) => { sum += a*b; }
                 Instr::Do => {}
                 Instr::Dont => {}
-                Instr::Mul(a, b) => {
-                    sum += a*b;
-                }
             }
         }
 
@@ -81,23 +79,9 @@ impl Input {
 
         for instr in &self.instructions {
             match instr {
-                Instr::Do => {
-                    // println!("Enabling"); 
-                    enabled = true;
-                }
-                Instr::Dont => {
-                    // println!("Disabling");
-                    enabled = false;
-                }
-                Instr::Mul(a, b) => {
-                    if enabled { 
-                        // println!("Enabled to mul {a}, {b}");
-                        sum += a*b; 
-                    }
-                    else {
-                        // println!("Disabled to mul {a}, {b}");
-                    }
-                }
+                Instr::Mul(a, b) => if enabled { sum += a*b; }
+                Instr::Do => { enabled = true; }
+                Instr::Dont => { enabled = false; }
             }
         }
 
