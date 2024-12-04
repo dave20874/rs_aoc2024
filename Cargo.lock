@@ -26,9 +26,6 @@ checksum = "8b37c88a63ffd85d15b406896cc343916d7cf57838a847b3a6f2ca5d39a5695a"
 [[package]]
 name = "data_aoc2024"
 version = "0.1.0"
-dependencies = [
- "indoc",
-]
 
 [[package]]
 name = "equivalent"
@@ -57,12 +54,6 @@ dependencies = [
  "equivalent",
  "hashbrown",
 ]
-
-[[package]]
-name = "indoc"
-version = "2.0.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b248f5224d1d606005e02c97f5aa4e88eeb230488bcc03bc9ca4d7991399f2b5"
 
 [[package]]
 name = "lazy_static"
