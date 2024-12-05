@@ -3,7 +3,7 @@ by David Wheeler
 
 If you don't know what Advent of Code is, it's an annual programming challenge hosted here:
 
-(https://adventofcode.com)
+https://adventofcode.com
 
 # Build Instructions
 To build and run this code, you will need to clone both this repository and the 
