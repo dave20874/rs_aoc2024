@@ -116,7 +116,12 @@ impl Input {
 
     // Test whether a loop is entered if the player at position and heading go forward, assuming an
     // added blocker at <blocker>.
-    fn it_loops(&self, position:&(isize, isize), heading:&(isize, isize), blocker:&(isize, isize)) -> bool {
+    fn it_loops(
+        &self, 
+        early_path: &HashSet<((isize, isize), (isize, isize))>, position:&(isize, isize), 
+        heading:&(isize, isize), 
+        blocker:&(isize, isize)) -> bool {
+
         // step from position, heading until we either retrace a step or fall off board.
         // return true if we start retracing.
 
@@ -128,7 +133,7 @@ impl Input {
             position = new_pos;
             heading = new_heading;
 
-            if visited.contains(&(position, heading)) {
+            if early_path.contains(&(position, heading)) | visited.contains(&(position, heading)) {
                 // we are repeating.
                 return true;
             }
@@ -148,21 +153,26 @@ impl Input {
 
         // Places the path has visited so far
         let mut visited: HashSet::<(isize, isize)> = HashSet::new();
+        let mut path: HashSet::<((isize, isize), (isize, isize))> = HashSet::new();
 
         // Places where a block can go and have been found to loop.
         let mut loopers: HashSet::<(isize, isize)> = HashSet::new();
+        let mut already_checked: HashSet::<(isize, isize)> = HashSet::new();
 
         // Current position and heading
         let mut position = self.start_pos;
         let mut heading = self.start_heading;
         visited.insert(position);
+        path.insert((position, heading));
         
         // Test whether we could block in front of the initial position
         let next_spot = (position.0+heading.0, position.1+heading.1);
         if self.valid_block_space(&next_spot) & 
-            !visited.contains(&next_spot) {
+            !visited.contains(&next_spot) &
+            !already_checked.contains(&next_spot) {
             // We could put a block on next_spot.
-            if self.it_loops(&position, &heading, &next_spot) {
+            already_checked.insert(next_spot);
+            if self.it_loops(&path, &position, &heading, &next_spot) {
                 // Add this to the set of looping block positions
                 loopers.insert(next_spot);
             }
@@ -172,14 +182,17 @@ impl Input {
             position = new_pos;
             heading = new_heading;
             visited.insert(position);
+            path.insert((position, heading));
 
             // Test whether we could block in front of this position. 
             // (This duplicates logic above.  This should be refactored.)
             let next_spot = (position.0+heading.0, position.1+heading.1);
             if self.valid_block_space(&next_spot) & 
-                !visited.contains(&next_spot) {
+                !visited.contains(&next_spot) &
+                !already_checked.contains(&next_spot) {
                 // We could put a block on next_spot.
-                if self.it_loops(&position, &heading, &next_spot) {
+                already_checked.insert(next_spot);
+                if self.it_loops(&path, &position, &heading, &next_spot) {
                     // Add this to the set of looping block positions
                     loopers.insert(next_spot);
                 }
