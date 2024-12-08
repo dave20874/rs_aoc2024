@@ -166,7 +166,7 @@ mod test {
         (Answer::Numeric(7024), Answer::Numeric(4151)),
         (Answer::Numeric(4752), Answer::Numeric(1719)),
         (Answer::Numeric(8401132154762), Answer::Numeric(95297119227552)),
-        (Answer::Numeric(323), Answer::None),
+        (Answer::Numeric(323), Answer::Numeric(1077)),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),

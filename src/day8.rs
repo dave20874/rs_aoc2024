@@ -57,12 +57,15 @@ impl Input {
         for antenna_type in self.antennas.keys() {
             let antennas = &self.antennas[&antenna_type];
             if antennas.len() > 1 {
+                // Nested for loops over every pair of antennas, i, j
                 for i in 0..antennas.len()-1 {
                     for j in i+1..antennas.len() {
+                        // Compute vector from i to j, compute locations of antinodes
                         let (dx, dy) = (antennas[i].0-antennas[j].0, antennas[i].1-antennas[j].1);
                         let antinode1 = (antennas[i].0+dx, antennas[i].1+dy);
                         let antinode2 = (antennas[j].0-dx, antennas[j].1-dy);
 
+                        // Insert antinodes (if they are on the map)
                         if (antinode1.0 >= 0) & (antinode1.0 < self.width) 
                            & (antinode1.1 >= 0) & (antinode1.1 < self.height) {
                             // valid antinode 1
@@ -73,6 +76,39 @@ impl Input {
                            & (antinode2.1 >= 0) & (antinode2.1 < self.height) {
                             // valid antinode 2
                             antinode_map.insert(antinode2);
+                        }
+                    }
+                }
+            }
+        }
+
+        antinode_map.len()
+    }
+
+    fn count_antinodes_updated(&self) -> usize {
+        let mut antinode_map: HashSet<(isize, isize)> = HashSet::new();
+        for antenna_type in self.antennas.keys() {
+            let antennas = &self.antennas[&antenna_type];
+            if antennas.len() > 1 {
+                // Nested for loops over every pair of antennas, i, j
+                for i in 0..antennas.len()-1 {
+                    for j in i+1..antennas.len() {
+
+                        // Get vector between these antennas
+                        let (dx, dy) = (antennas[i].0-antennas[j].0, antennas[i].1-antennas[j].1);
+
+                        // Project Antinodes from antenna[i], including the antenna
+                        let mut p = (antennas[i].0, antennas[i].1);
+                        while (p.0 >= 0) & (p.0 < self.width) & (p.1 >= 0) & (p.1 < self.height) {
+                            antinode_map.insert(p);
+                            p = (p.0+dx, p.1+dy);
+                        }
+
+                        // Project Antinodes from antenna[j], including the antenna
+                        let mut p = (antennas[j].0, antennas[j].1);
+                        while (p.0 >= 0) & (p.0 < self.width) & (p.1 >= 0) & (p.1 < self.height) {
+                            antinode_map.insert(p);
+                            p = (p.0-dx, p.1-dy);
                         }
                     }
                 }
@@ -103,9 +139,9 @@ impl<'a> Day for Day8 {
     }
 
     fn part2(&self, text: &str) -> Answer {
-        let _input = Input::read(text);
+        let input = Input::read(text);
 
-        Answer::None
+        Answer::Numeric(input.count_antinodes_updated())
     }
 }
 
@@ -153,6 +189,15 @@ mod test {
         assert_eq!(input.count_antinodes(), 14);
     }
 
+    
+    #[test]
+    // Read and confirm inputs
+    fn test_num_antinodes_updated() {
+        let input = Input::read(EXAMPLE1);
+
+        assert_eq!(input.count_antinodes_updated(), 34);
+    }
+
     #[test]
     // Compute part 1 result on example 1 and confirm expected value.
     fn test_part1() {
@@ -166,7 +211,7 @@ mod test {
     fn test_part2() {
         // Based on the example in part 2.
         let d = Day8::new();
-        assert_eq!(d.part2(EXAMPLE1), Answer::None);
+        assert_eq!(d.part2(EXAMPLE1), Answer::Numeric(34));
     }
     
 }
