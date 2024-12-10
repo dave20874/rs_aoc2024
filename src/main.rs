@@ -167,8 +167,8 @@ mod test {
         (Answer::Numeric(4752), Answer::Numeric(1719)),
         (Answer::Numeric(8401132154762), Answer::Numeric(95297119227552)),
         (Answer::Numeric(323), Answer::Numeric(1077)),
-        (Answer::None, Answer::None),
-        (Answer::None, Answer::None),
+        (Answer::Numeric(6421128769094), Answer::None), // part2: 8624287520933 is too high.
+        (Answer::None, Answer::None),  
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
@@ -197,8 +197,10 @@ mod test {
 
     #[test]
     fn test_day() {
-        let day = 8;
+        let day = 9;
         let (d, text) = DAYS[day-1];
+
+        
         assert_eq!(d.part1(text), ANSWERS[day-1].0);
         assert_eq!(d.part2(text), ANSWERS[day-1].1);
     }
