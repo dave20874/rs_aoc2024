@@ -167,7 +167,7 @@ mod test {
         (Answer::Numeric(4752), Answer::Numeric(1719)),
         (Answer::Numeric(8401132154762), Answer::Numeric(95297119227552)),
         (Answer::Numeric(323), Answer::Numeric(1077)),
-        (Answer::Numeric(6421128769094), Answer::None), // part2: 8624287520933 is too high.
+        (Answer::Numeric(6421128769094), Answer::Numeric(6448168620520)), // part2: 8624287520933 is too high, 6432457513353 too low.
         (Answer::None, Answer::None),  
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
@@ -200,7 +200,7 @@ mod test {
         let day = 9;
         let (d, text) = DAYS[day-1];
 
-        
+
         assert_eq!(d.part1(text), ANSWERS[day-1].0);
         assert_eq!(d.part2(text), ANSWERS[day-1].1);
     }

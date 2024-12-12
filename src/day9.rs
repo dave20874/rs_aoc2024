@@ -157,34 +157,70 @@ impl Disk {
     }
 
     fn defrag2(&mut self) {
-
-
-
         let (mut free_blocks, blocks_to_move) = self.scan_blocks();
 
         for n in (0..blocks_to_move.len()).rev() {
             let (start, len, _file_id) = blocks_to_move[n];
 
+            let mut first_match: Option<(usize, usize)> = None;  // len, start of empty block
+            // println!("Tyring to move file {}", _file_id);
+
+            // find the first place it will fit
             for use_len in len..10 {
+                
                 // Use a free block of length use_len. 
                 // break if successful, otherwise loop will try larger blocks
-                match free_blocks[use_len].pop_front() {
-                    Some(free_start) => {
-                        // Copy len blocks from start to free_start
-                        for i in 0..len {
-                            self.blocks.swap(free_start+i, start+i);
+                if let Some(start) = free_blocks[use_len].front() {
+                    if let Some( (_len, best_start)) = first_match {
+                        if start < &best_start {
+                            // This is the new best start
+                            // println!("  Found a better spot at {}, (len: {})", start, use_len);
+                            first_match = Some((use_len, *start));
                         }
-
-                        // Put unused free blocks back into a free list.
-                        let leftover_size = use_len-len;
-                        let leftover_location = free_start+len;
-                        let idx = free_blocks[leftover_size].partition_point(|&x| x <= leftover_location);
-                        free_blocks[leftover_size].insert(idx, leftover_location);
-                        break;
                     }
-                    None => {}
-                }
+                    else {
+                        // This is the first best start
+                        // println!("  Found first spot at {}, (len: {})", start, use_len);
+                        first_match = Some((use_len, *start));
+                    }
+                }            
             }
+
+            // move the stuff, if we found a place for it
+            match first_match {
+                Some((use_len, _free_start)) => {
+                    match free_blocks[use_len].pop_front() {
+                        Some(free_start) => {
+                            if free_start < start {
+                                // println!("  Moving file {} from {} to {}", _file_id, start, free_start);
+                                // Copy len blocks from start to free_start
+                                for i in 0..len {
+                                    self.blocks.swap(free_start+i, start+i);
+                                }
+
+                                // Put unused free blocks back into a free list.
+                                let leftover_size = use_len-len;
+                                if leftover_size > 0 {
+                                    // println!("  Leftover piece sized {}", leftover_size);
+                                    let leftover_location = free_start+len;
+                                    let idx = free_blocks[leftover_size].partition_point(|&x| x <= leftover_location);
+                                    free_blocks[leftover_size].insert(idx, leftover_location);
+                                }
+                            }
+                            else {
+                                // println!("  Found spot is worse that starting spot.");
+                            }
+                        }
+                        None => {
+                            assert!(false, "Not possible.");
+                        }
+                    }   
+                }
+                None => {
+                    // No place to move it.
+                    // println!("Couldn't move file {}", _file_id);
+                }
+            }         
         }
 
     }
@@ -201,56 +237,6 @@ impl Disk {
         }
 
         sum
-    }
-
-    fn show(&self) {
-        let mut in_data = false;
-        let mut last_file_id = 0;
-
-        for n in 0..self.blocks.len() {
-            match self.blocks[n] {
-                Some(file_id) => {
-                    // We are in data, is this a new block
-                    if !in_data {
-                        // end free block we were in
-                        println!();
-
-                        // start new data block
-                        print!("@:{}, id:{} #", n, file_id);
-                        last_file_id = file_id;
-                        in_data = true;
-                    }
-                    else if file_id != last_file_id {
-                        // end data block we were in
-                        println!();
-
-                        // start new data block
-                        print!("@:{}, id:{} #", n, file_id);
-                        last_file_id = file_id;
-                        in_data = true;
-                    }
-                    else {
-                        // continue the data block we were in
-                        print!("#");
-                    }
-                }
-                None => {
-                    if in_data {
-                        // end data block we were in
-                        println!();
-
-                        // start new free block
-                        print!("@:{} .", n);
-                        in_data = false;
-                    }
-                    else {
-                        // continue the free block we already in
-                        print!(".");
-                    }
-                }
-            }
-        }
-        println!();
     }
 }
 
@@ -281,8 +267,6 @@ impl<'a> Day for Day9 {
 
         disk.defrag2();
 
-        disk.show();
-
         Answer::Numeric(disk.checksum())
     }
 }
@@ -305,9 +289,6 @@ mod test {
         let input = Input::read(EXAMPLE1);
 
         assert_eq!(input.digits.len(), 19);
-
-        // TODO-DW : Verify that inputs were read successfully.
-        // assert_eq!(input.left.len(), 6);
     }
 
     #[test]
