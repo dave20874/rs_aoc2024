@@ -171,7 +171,7 @@ mod test {
         (Answer::Numeric(512), Answer::Numeric(1045)),  
         (Answer::Numeric(189547), Answer::Numeric(224577979481346)),
         (Answer::Numeric(1549354), Answer::Numeric(937032)),
-        (Answer::None, Answer::None),
+        (Answer::Numeric(38839), Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
@@ -197,7 +197,7 @@ mod test {
 
     #[test]
     fn test_day() {
-        let day = 12;
+        let day = 13;
         let (d, text) = DAYS[day-1];
 
         assert_eq!(d.part1(text), ANSWERS[day-1].0);
