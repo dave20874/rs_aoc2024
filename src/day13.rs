@@ -19,13 +19,14 @@ struct Game {
 }
 
 impl Game {
-    fn soln(&self) -> Option<(isize, isize)> {
-        let det = (self.a.0 * self.b.1) - (self.b.0 * self.a.1);
+    fn soln(a11: isize, a12: isize, a21: isize, a22: isize, b1: isize, b2: isize) -> Option<(isize, isize)>
+    {
+        let det = (a11 * a22) - (a21 * a12);
         // dbg!(det);
 
         if det != 0 {
-            let det_x = (self.prize.0 * self.b.1) - (self.b.0 * self.prize.1);
-            let det_y = (self.a.0 * self.prize.1) - (self.prize.0 * self.a.1);
+            let det_x = (b1 * a22) - (a21 * b2);
+            let det_y = (a11 * b2) - (b1 * a12);
             // dbg!(det_x);
             // dbg!(det_y);
 
@@ -42,6 +43,14 @@ impl Game {
             // No solution
             None
         }
+    }
+
+    fn soln1(&self) -> Option<(isize, isize)> {
+        Game::soln(self.a.0, self.a.1, self.b.0, self.b.1, self.prize.0, self.prize.1)
+    }
+
+    fn soln2(&self) -> Option<(isize, isize)> {
+        Game::soln(self.a.0, self.a.1, self.b.0, self.b.1, self.prize.0+10000000000000, self.prize.1+10000000000000)
     }
 }
 
@@ -76,7 +85,23 @@ impl Input {
     fn tokens(&self) -> usize {
         let sum: isize = self.games.iter()
             .map(|g| { 
-                g.soln() 
+                g.soln1() 
+            } )
+            .map(|s| { 
+                match s {
+                    Some( (a, b) ) => 3*a + b,
+                    None => 0,
+                }
+            } )
+            .sum();
+
+        sum as usize
+    }
+
+    fn tokens2(&self) -> usize {
+        let sum: isize = self.games.iter()
+            .map(|g| { 
+                g.soln2() 
             } )
             .map(|s| { 
                 match s {
@@ -110,9 +135,9 @@ impl<'a> Day for Day13 {
     }
 
     fn part2(&self, text: &str) -> Answer {
-        let _input = Input::read(text);
+        let input = Input::read(text);
 
-        Answer::None
+        Answer::Numeric(input.tokens2())
     }
 }
 
@@ -157,10 +182,21 @@ Prize: X=18641, Y=10279
     fn test_soln() {
         let input = Input::read(EXAMPLE1);
 
-        assert_eq!(input.games[0].soln(), Some( (80, 40) ));
-        assert_eq!(input.games[1].soln(), None);
-        assert_eq!(input.games[2].soln(), Some( (38, 86) ));
-        assert_eq!(input.games[3].soln(), None);    
+        assert_eq!(input.games[0].soln1(), Some( (80, 40) ));
+        assert_eq!(input.games[1].soln1(), None);
+        assert_eq!(input.games[2].soln1(), Some( (38, 86) ));
+        assert_eq!(input.games[3].soln1(), None);    
+    }
+
+    
+    #[test]
+    fn test_soln2() {
+        let input = Input::read(EXAMPLE1);
+
+        assert_eq!(input.games[0].soln2(), None);
+        assert_ne!(input.games[1].soln2(), None);
+        assert_eq!(input.games[2].soln2(), None);
+        assert_ne!(input.games[3].soln2(), None);    
     }
     
     #[test]
@@ -183,7 +219,7 @@ Prize: X=18641, Y=10279
     fn test_part2() {
         // Based on the example in part 2.
         let d = Day13::new();
-        assert_eq!(d.part2(EXAMPLE1), Answer::None);
+        assert_eq!(d.part2(EXAMPLE1), Answer::Numeric(875318608908));
     }
     
 }
