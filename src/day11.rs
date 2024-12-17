@@ -107,17 +107,22 @@ impl Input {
         }
         else if let Some(result) = cache.get( &(stone, count) ) {
             // We've seen this situation before, get the solution we already have
+            // println!("Cache hit on {}, {} -> {}", stone, count, *result);
             *result
         }
         else {
+            // println!("Cache miss");
             // blink on this stone and check results
             let answer = if stone == 0 {
+                // By rule, 0 -> 1
                 Input::blink_dfs(cache, 1, count-1)
             }
             else if let Some((a, b)) = Input::split_stone(stone) {
+                // By rule, even-length numbers are split
                 Input::blink_dfs(cache, a, count-1) + Input::blink_dfs(cache, b, count-1)
             }
             else {
+                // Default rule: multiply by 2024
                 Input::blink_dfs(cache, stone*2024, count-1)
             };
 

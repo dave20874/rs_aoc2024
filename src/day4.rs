@@ -1,5 +1,4 @@
 use lazy_static::lazy_static;
-use regex::Regex;
 
 use crate::day::{Day, Answer};
 
@@ -9,10 +8,6 @@ struct Check {
 }
 
 lazy_static! {
-    // When used on text like "NNNNN   MMMMM"
-    // captures 1, 2 are the two integer inputs, N and M
-    static ref LINE_RE: Regex = Regex::new("(\\d+)\\s+(\\d+)").unwrap();
-
     static ref MAS_X_CHECKS: Vec<Check> = vec![
         Check { checks: vec![(0, 0, 'M'), (0, 2, 'S'), (1, 1, 'A'), (2, 0, 'M'), (2, 2, 'S')] },// orientation 0
         Check { checks: vec![(0, 0, 'M'), (0, 2, 'M'), (1, 1, 'A'), (2, 0, 'S'), (2, 2, 'S')] }, // orientation 1
