@@ -173,7 +173,7 @@ mod test {
         (Answer::Numeric(1549354), Answer::Numeric(937032)),
         (Answer::Numeric(38839), Answer::Numeric(75200131617108)),
         (Answer::Numeric(233709840), Answer::Numeric(6620)),
-        (Answer::Numeric(1538871), Answer::None),
+        (Answer::Numeric(1538871), Answer::Numeric(1543338)),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
         (Answer::None, Answer::None),
