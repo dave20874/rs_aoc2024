@@ -300,7 +300,7 @@ Program: 0,1,5,4,3,0
     fn test_part2() {
         // Based on the example in part 2.
         let d = Day17::new();
-        assert_eq!(d.part2(EXAMPLE1), Answer::Numeric(164540892147389));
+        assert_eq!(d.part2(DAY17_INPUT), Answer::Numeric(164540892147389));
     }
     
 }

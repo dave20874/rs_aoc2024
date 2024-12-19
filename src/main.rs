@@ -183,8 +183,8 @@ mod test {
             (Answer::Numeric(1538871), Answer::Numeric(1543338)),
             (Answer::Numeric(99448), Answer::Numeric(498)),
             (Answer::String(String::from("4,3,2,6,4,5,3,2,4")), Answer::Numeric(164540892147389)),
-            (Answer::None, Answer::None),
-            (Answer::None, Answer::None),
+            (Answer::Numeric(260), Answer::String(String::from("24,48"))),
+            (Answer::Numeric(236), Answer::Numeric(643685981770598)),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
@@ -193,34 +193,6 @@ mod test {
             (Answer::None, Answer::None),
         ];
     }
-
-    // const ANSWERS: [(Answer, Answer); 25] = [
-    //     (Answer::Numeric(2000468), Answer::Numeric(18567089)),   // Dec 1
-    //     (Answer::Numeric(663), Answer::Numeric(692)),
-    //     (Answer::Numeric(192767529), Answer::Numeric(104083373)),
-    //     (Answer::Numeric(2447), Answer::Numeric(1868)),
-    //     (Answer::Numeric(7024), Answer::Numeric(4151)),
-    //     (Answer::Numeric(4752), Answer::Numeric(1719)),
-    //     (Answer::Numeric(8401132154762), Answer::Numeric(95297119227552)),
-    //     (Answer::Numeric(323), Answer::Numeric(1077)),
-    //     (Answer::Numeric(6421128769094), Answer::Numeric(6448168620520)),
-    //     (Answer::Numeric(512), Answer::Numeric(1045)),  
-    //     (Answer::Numeric(189547), Answer::Numeric(224577979481346)),
-    //     (Answer::Numeric(1549354), Answer::Numeric(937032)),
-    //     (Answer::Numeric(38839), Answer::Numeric(75200131617108)),
-    //     (Answer::Numeric(233709840), Answer::Numeric(6620)),
-    //     (Answer::Numeric(1538871), Answer::Numeric(1543338)),
-    //     (Answer::Numeric(99448), Answer::Numeric(498)),
-    //     (Answer::String(String::from("4,3,2,6,4,5,3,2,4")), Answer::Numeric(164540892147389)),  // "4,3,2,6,4,5,3,2,4"
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    //     (Answer::None, Answer::None),
-    // ];
 
     #[test]
     fn test_all() {
@@ -233,7 +205,7 @@ mod test {
 
     #[test]
     fn test_day() {
-        let day = 17;
+        let day = 19;
         let (d, text) = DAYS[day-1];
 
         assert_eq!(d.part1(text), ANSWERS[day-1].0);
