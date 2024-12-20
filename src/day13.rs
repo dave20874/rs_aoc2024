@@ -148,7 +148,7 @@ mod test {
     use crate::day13::{Day13, Input};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example inputs
     const EXAMPLE1: &str = "\
 Button A: X+94, Y+34
 Button B: X+22, Y+67

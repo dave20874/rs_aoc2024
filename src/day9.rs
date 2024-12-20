@@ -1,16 +1,6 @@
 use std::collections::VecDeque;
 
-use lazy_static::lazy_static;
-use regex::Regex;
-
 use crate::day::{Day, Answer};
-
-
-lazy_static! {
-    // When used on text like "NNNNN   MMMMM"
-    // captures 1, 2 are the two integer inputs, N and M
-    static ref LINE_RE: Regex = Regex::new("(\\d+)\\s+(\\d+)").unwrap();
-}
 
 // A representation of the puzzle inputs.
 // Today it's just a list (Vec) of Strings, one for each input line.
@@ -278,7 +268,7 @@ mod test {
     use crate::day9::{Day9, Input, Disk};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example input
     const EXAMPLE1: &str = "\
 2333133121414131402
 ";

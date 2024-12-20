@@ -56,7 +56,7 @@ mod test {
     use crate::day22::{Day22, Input};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example inputs
     const EXAMPLE1: &str = "\
 ";
 
@@ -64,8 +64,8 @@ mod test {
     // Read and confirm inputs
     fn test_read() {
         let _input = Input::read(EXAMPLE1);
-
-        // TODO-DW : Verify that inputs were read successfully.
+        
+        // Verify that inputs were read successfully.
         // assert_eq!(input.left.len(), 6);
     }
 

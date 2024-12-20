@@ -265,7 +265,7 @@ mod test {
     use crate::day12::{Day12, Input, GardenMap};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example Inputs
     const EXAMPLE1: &str = "\
 RRRRIICCFF
 RRRRIICCCF

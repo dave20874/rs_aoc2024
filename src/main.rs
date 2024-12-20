@@ -205,7 +205,7 @@ mod test {
 
     #[test]
     fn test_day() {
-        let day = 20;
+        let day = 21;
         let (d, text) = DAYS[day-1];
 
         assert_eq!(d.part1(text), ANSWERS[day-1].0);

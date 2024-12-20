@@ -1,16 +1,6 @@
 use std::{cmp::Ordering, collections::{HashMap, HashSet}};
 
-use lazy_static::lazy_static;
-use regex::Regex;
-
 use crate::day::{Day, Answer};
-
-
-lazy_static! {
-    // When used on text like "NNNNN   MMMMM"
-    // captures 1, 2 are the two integer inputs, N and M
-    static ref LINE_RE: Regex = Regex::new("(\\d+)\\s+(\\d+)").unwrap();
-}
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Dir {
@@ -84,62 +74,6 @@ impl Board {
 
         Board { board, pos }
     }
-
-    // fn can_move(&self, dir: &Dir) -> bool {
-    //     let dxdy = match dir {
-    //         Dir::N => (0, -1),
-    //         Dir::E => (1, 0),
-    //         Dir::S => (0, 1),
-    //         Dir::W => (-1, 0),
-    //     };
-
-    //     // Look in the indicated direction for an open space
-    //     // If one is found before a wall, we can move
-    //     let mut spot = self.pos;
-    //     while self.board[spot.1 as usize][spot.0 as usize] != MapState::Wall {
-    //         if self.board[spot.1 as usize][spot.0 as usize] == MapState::Empty {
-    //             // We can move
-    //             return true;
-    //         }
-
-    //         spot = (spot.0+dxdy.0, spot.1+dxdy.1)
-    //     }
-
-    //     // We didn't find that open spot
-    //     false
-    // }
-
-    // fn do_move(&mut self, dir: &Dir) {
-    //     if self.can_move(&dir) {
-    //         let dxdy = match dir {
-    //             Dir::N => (0, -1),
-    //             Dir::E => (1, 0),
-    //             Dir::S => (0, 1),
-    //             Dir::W => (-1, 0),
-    //         };
-    
-    //         // Look in the indicated direction for an open space
-    //         // If one is found before a wall, we can move
-    //         let spot = self.pos;
-    //         let next_spot = (spot.0+dxdy.0, spot.1+dxdy.1);
-
-    //         if self.board[next_spot.1 as usize][next_spot.0 as usize] == MapState::Box {
-    //             // We're pushing boxes.
-    //             let mut end_line = next_spot;
-
-    //             while self.board[end_line.1 as usize][end_line.0 as usize] != MapState::Empty {
-    //                 end_line = (end_line.0+dxdy.0, end_line.1+dxdy.1)
-    //             }
-    //             self.board[end_line.1 as usize][end_line.0 as usize] = MapState::Box;
-    //         }
-
-    //         self.board[next_spot.1 as usize][next_spot.0 as usize] = MapState::Player;
-    //         self.board[spot.1 as usize][spot.0 as usize] = MapState::Empty;
-
-    //         self.pos = next_spot;
-    //     }
-        
-    // }
 
     // return coord of adjacent position in the given direction
     fn adjacent_to(a: &(isize, isize), dir: &Dir) -> (isize, isize) {

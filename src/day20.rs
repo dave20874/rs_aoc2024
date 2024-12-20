@@ -1,17 +1,8 @@
 use std::collections::{HashMap, HashSet, VecDeque};
 
-use lazy_static::lazy_static;
-use regex::Regex;
 use itertools::Itertools;
 
 use crate::day::{Day, Answer};
-
-
-lazy_static! {
-    // When used on text like "NNNNN   MMMMM"
-    // captures 1, 2 are the two integer inputs, N and M
-    static ref LINE_RE: Regex = Regex::new("(\\d+)\\s+(\\d+)").unwrap();
-}
 
 // A representation of the puzzle inputs.
 // Today it's just a list (Vec) of Strings, one for each input line.
@@ -57,9 +48,6 @@ impl Input {
 
 #[derive(Debug)]
 struct Cheat {
-    // from: (usize, usize),
-    // to: (usize, usize),
-    // new_dist: usize,
     savings: isize,
 }
 
@@ -122,7 +110,7 @@ impl Day20 {
 
         // Return this cheat
         if savings > 0 {
-            Some(Cheat { /* from: *start_coord, to: *end_coord, new_dist, */ savings})
+            Some(Cheat { savings })
         }
         else {
             None
@@ -193,7 +181,7 @@ mod test {
     use crate::day20::{Day20, Input, Cheat};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example inputs
     const EXAMPLE1: &str = "\
 ###############
 #...#...#.....#
@@ -216,6 +204,8 @@ mod test {
     // Read and confirm inputs
     fn test_read() {
         let input = Input::read(EXAMPLE1);
+
+        // Verify inputs were read correctly.
         assert_eq!(input.open.len(), 85);
         assert_eq!(input.start, (1, 3));
         assert_eq!(input.end, (5, 7));

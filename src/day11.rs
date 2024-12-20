@@ -167,7 +167,7 @@ mod test {
     use crate::day11::{Day11, Input};
     use crate::day::{Day, Answer};
     
-    // TODO Place example inputs here.
+    // Example inputs
     const EXAMPLE1: &str = "\
 125 17
 ";
