@@ -185,7 +185,7 @@ mod test {
             (Answer::String(String::from("4,3,2,6,4,5,3,2,4")), Answer::Numeric(164540892147389)),
             (Answer::Numeric(260), Answer::String(String::from("24,48"))),
             (Answer::Numeric(236), Answer::Numeric(643685981770598)),
-            (Answer::None, Answer::None),
+            (Answer::Numeric(1355), Answer::None),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
@@ -205,10 +205,10 @@ mod test {
 
     #[test]
     fn test_day() {
-        let day = 18;
+        let day = 20;
         let (d, text) = DAYS[day-1];
 
-        // assert_eq!(d.part1(text), ANSWERS[day-1].0);
+        assert_eq!(d.part1(text), ANSWERS[day-1].0);
         assert_eq!(d.part2(text), ANSWERS[day-1].1);
     }
 
