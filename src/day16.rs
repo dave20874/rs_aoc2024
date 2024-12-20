@@ -104,32 +104,21 @@ impl Input {
         Input { maze, start, end }
     }
 
-    fn solve(&self) -> Option<(usize, usize)> {
+    fn solve_best_score(&self) -> Option<usize> {
         let mut to_explore: PriorityQueue<(SolnState, Vec<(usize, usize)>), isize> = PriorityQueue::new();
         let mut explored: HashMap<SolnState, usize> = HashMap::new();
         let start_state = SolnState::new(self.start);
         to_explore.push((start_state, Vec::new()), 0);
         let mut best_cost = None;
-        let mut best_tiles: HashSet<(usize, usize)> = HashSet::new();
-
-        // start and end positions are always in best tiles.
-        best_tiles.insert(self.start);
-        best_tiles.insert(self.end);
-        // let mut iterations = 0;
 
         while !to_explore.is_empty() {
-            // iterations += 1;
-            // if iterations > 1000 {
-            //     return None
-            // }
-
             // Pop the best current state from the queue
             let ((current, path), neg_cost) = to_explore.pop().unwrap();
             let cost = -neg_cost as usize;
 
             if let Some(old_cost) = explored.get(&current) {
-                if *old_cost < cost {
-                    // We already explored this state at a lower or equal cost.
+                if *old_cost <= cost {
+                    // We already explored this state at a lower cost.
                     continue;
                 }
             }
@@ -138,33 +127,8 @@ impl Input {
 
             // If this is at the end, we have solved it.
             if current.pos == self.end {
-                match best_cost {
-                    Some(prior_cost) => {
-                        if cost < prior_cost {
-                            panic!("This can't be happening")
-                        }
-                        else if cost > prior_cost {
-                            // We won't find any more best solutions
-                            break;
-                        }
-                        else {
-                            // An equally good solution was found.
-                            // register all locations on its path.
-                            for pos in &path {
-                                best_tiles.insert(*pos);
-                            }
-                        }
-                    }
-                    None => {
-                        // We have our best, lowest cost
-                        best_cost = Some(cost);
-
-                        // register all locations on its path.
-                        for pos in &path {
-                            best_tiles.insert(*pos);
-                        }
-                    }
-                }
+                best_cost = Some(cost);
+                break;
             }
 
             // Generate all possible next steps from here and their costs
@@ -180,10 +144,117 @@ impl Input {
             }
         }
 
+        best_cost
+    }
+
+    fn solve_num_tiles(&self) -> Option<usize> {
+        // Each entry in to_explore contains a SolnState and a location this state was reached from.
+        let mut to_explore: PriorityQueue<(SolnState, SolnState), isize> = PriorityQueue::new();
+        
+        let mut explored: HashMap<SolnState, usize> = HashMap::new();
+        let start_state = SolnState::new(self.start);
+        to_explore.push((start_state, start_state), 0);
+
+        let mut best_cost = None;
+
+        // let mut best_tiles: HashSet<(usize, usize)> = HashSet::new();
+        // let mut optimal_paths = 0;
+
+        // For every state, this records a set of states that lead to it with lowest score.
+        let mut comes_from: HashMap<SolnState, HashSet<SolnState>> = HashMap::new();
+
+        // start and end positions are always in best tiles.
+        // best_tiles.insert(self.start);
+        // best_tiles.insert(self.end);
+        // let mut iterations = 0;
+
+        while !to_explore.is_empty() {
+            // Pop the best current state from the queue
+            let ((current, came_from), neg_cost) = to_explore.pop().unwrap();
+            let cost = -neg_cost as usize;
+
+            if let Some(known_cost) = best_cost {
+                if known_cost < cost {
+                    // We're done exploring when the costs get higher
+                    // than the known best cost.
+                    break;
+                }
+            }
+
+            if let Some(old_cost) = explored.get(&current) {
+                // We've been to this state on other paths
+                if cost > *old_cost {
+                    // This is a worse way to reach this state than we already know.
+                    // Stop exploring this path
+                    continue;
+                }
+
+                let old_set = comes_from.get_mut(&current).unwrap();
+                if cost < *old_cost {
+                    // This is a better way to reach this tile, reset the paths_to info
+                    old_set.clear();
+                }
+
+                // Add the current path's info to this tile's paths_to
+                old_set.insert(came_from);
+            }
+            else {
+                // First time visiting this state
+                // Register this tile with paths_to data structure
+                let mut new_set = HashSet::new();
+                new_set.insert(came_from);
+                comes_from.insert(current, new_set);
+            }
+
+            explored.insert(current, cost);
+
+            // If not at the end, keep exploring
+            if current.pos != self.end {
+                // Generate all possible next steps from here and their costs
+                for (next_state, next_cost) in Self::next_states(&current, &cost) {
+                    if self.maze.contains(&next_state.pos) {
+                        // The space is clear, next_state is a valid move.
+                        to_explore.push((next_state, current), -(next_cost as isize));
+                    }
+                }
+            }
+            else {
+                // We are at the end and now know the best cost.
+                best_cost = Some(cost);
+            }
+        }
+
         match best_cost {
-            Some(cost) => {
+            Some(_cost) => {
                 // We have a solution, return cost and num best_tiles.
-                Some( (cost, best_tiles.len()) )
+                // Work through all the states we passed through, collect all the tiles they occupied.
+                let mut best_tiles: HashSet<(usize, usize)> = HashSet::new();
+                let mut backtrack_states_to_explore: Vec<SolnState> = Vec::new();
+                backtrack_states_to_explore.push(SolnState {pos: self.end, dir: Dir::N});
+                backtrack_states_to_explore.push(SolnState {pos: self.end, dir: Dir::S});
+                backtrack_states_to_explore.push(SolnState {pos: self.end, dir: Dir::E});
+                backtrack_states_to_explore.push(SolnState {pos: self.end, dir: Dir::W});
+                
+                let mut backtrack_explored: HashSet<SolnState> = HashSet::new();
+
+                while let Some(state) = backtrack_states_to_explore.pop() {
+                    if !backtrack_explored.contains(&state) {
+                        // this is new.
+                        backtrack_explored.insert(state);
+
+                        if let Some(set) = comes_from.get(&state) {
+                            // Make sure this tile is in best
+                            best_tiles.insert(state.pos);
+
+                            // Add all the states this comes from to the set to explore
+                            for member in set.iter() {
+                                backtrack_states_to_explore.push(*member);
+                            }
+                        }
+                    }
+                }
+
+                Some( best_tiles.len() )
             }
             None => { None }
         }
@@ -213,8 +284,8 @@ impl<'a> Day for Day16 {
     fn part1(&self, text: &str) -> Answer {
         let input = Input::read(text);
 
-        match input.solve() {
-            Some((cost, _best_tiles)) => Answer::Numeric(cost),
+        match input.solve_best_score() {
+            Some(cost) => Answer::Numeric(cost),
             None => Answer::None,
         }
     }
@@ -223,8 +294,8 @@ impl<'a> Day for Day16 {
         let input = Input::read(text);
 
 
-        match input.solve() {
-            Some((_cost, best_tiles)) => Answer::Numeric(best_tiles),
+        match input.solve_num_tiles() {
+            Some(best_tiles) => Answer::Numeric(best_tiles),
             None => Answer::None,
         }
     }
@@ -300,18 +371,35 @@ const EXAMPLE2: &str = "\
 
     #[test]
     // Read and confirm inputs
-    fn test_solve() {
+    fn test_solve_best_score() {
         let input = Input::read(EXAMPLE1);
 
-        assert_eq!(input.solve(), Some((7036, 45)));
+        assert_eq!(input.solve_best_score(), Some(7036));
     }
 
     #[test]
     // Read and confirm inputs
-    fn test_solve2() {
+    fn test_solve_num_tiles() {
+        let input = Input::read(EXAMPLE1);
+
+        assert_eq!(input.solve_num_tiles(), Some(45));
+    }
+
+    #[test]
+    // Read and confirm inputs
+    fn test_solve_best_score_ex2() {
         let input = Input::read(EXAMPLE2);
 
-        assert_eq!(input.solve(), Some((11048, 64)));
+        assert_eq!(input.solve_best_score(), Some(11048));
+    }
+
+    
+    #[test]
+    // Read and confirm inputs
+    fn test_solve_num_tiles_ex2() {
+        let input = Input::read(EXAMPLE2);
+
+        assert_eq!(input.solve_num_tiles(), Some(64));
     }
 
     #[test]
