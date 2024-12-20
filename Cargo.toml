@@ -13,6 +13,7 @@ regex = "1.11.1"
 rgb = "0.8.50"
 data_aoc2024 = { path = "../data_aoc2024" }
 priority-queue = "2.1.1"
+itertools = "0.13.0"
 
 [lib]
 name = "aoc2024"
