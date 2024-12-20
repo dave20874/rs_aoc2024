@@ -5,6 +5,8 @@ use regex::Regex;
 
 use crate::day::{Day, Answer};
 
+const START_TIME: usize = 1024;
+const PROBLEM_SIZE: usize = 71;
 
 lazy_static! {
     static ref LINE_RE: Regex = Regex::new("(\\d+),(\\d+)").unwrap();
@@ -35,12 +37,14 @@ impl Input {
 }
 
 pub struct Day18 {
+    start_t: usize,
+    prob_size: usize,
 }
 
 // Day18
 impl Day18 {
     pub const fn new() -> Self {
-        Self { }
+        Self { start_t: START_TIME, prob_size: PROBLEM_SIZE }
     }
 
     fn solve(input: &Input, t: usize) -> Option<usize> {
@@ -102,33 +106,47 @@ impl Day18 {
     }
 
     fn find_cutoff(input: &Input, start_t: usize) -> Option<(usize, usize)> {
-        let mut cutoff = None;
-        for t in start_t..input.coords.len() {
-            match Self::solve(input, t) {
-                Some(_n) => {
-                    // Not cut off yet, keep trying
+        let mut low: usize = start_t;
+        let mut high: usize = start_t;
+
+        // grow high until it's high enough to cut off the path
+        let mut soln = Self::solve(input, high);
+        while let Some(_dist) = soln {
+            high *= 2;
+            soln = Self::solve(input, high);
+        }
+
+        // now binary search between low and high
+
+        while high-low > 1 {
+            let mid = (low+high)/2;
+            soln = Self::solve(input, mid);
+            match soln {
+                Some(_dist) => {
+                    // Solved, raise low to mid
+                    low = mid;
                 }
                 None => {
-                    // found the cutoff
-                    cutoff = Some(input.coords[t-1]);
-                    break;
+                    // Blocked, lower high to mid
+                    high = mid;
                 }
             }
         }
+
+        // high is the first setting where it's blocked.
+        let cutoff = Some(input.coords[high-1]);
 
         cutoff
     }
 }
 
-const PROBLEM_SIZE: usize = 71;
-
 impl<'a> Day for Day18 {
 
     // Compute Part 1 solution
     fn part1(&self, text: &str) -> Answer {
-        let input = Input::read(text, PROBLEM_SIZE);
+        let input = Input::read(text, self.prob_size);
 
-        match Self::solve(&input, 1024) {
+        match Self::solve(&input, self.start_t) {
             Some(n) => {
                 Answer::Numeric(n)
             }
@@ -139,9 +157,9 @@ impl<'a> Day for Day18 {
     }
 
     fn part2(&self, text: &str) -> Answer {
-        let input = Input::read(text, PROBLEM_SIZE);
+        let input = Input::read(text, self.prob_size);
 
-        let cutoff = Day18::find_cutoff(&input, 1024);
+        let cutoff = Day18::find_cutoff(&input, self.start_t);
 
         match cutoff {
             Some((x, y)) => {
@@ -216,12 +234,25 @@ mod test {
         assert_eq!(cutoff, Some((6,1)));
     }
 
+    
+    #[test]
+    // Compute part 2 result on example 2 and confirm expected value.
+    fn test_part1() {
+        // Based on the example in part 2.
+        let mut d = Day18::new();
+        d.prob_size = 7;
+        d.start_t = 12; // override for test
+        assert_eq!(d.part1(EXAMPLE1), Answer::Numeric(22));
+    }
+
     #[test]
     // Compute part 2 result on example 2 and confirm expected value.
     fn test_part2() {
         // Based on the example in part 2.
-        let d = Day18::new();
-        assert_eq!(d.part2(EXAMPLE1), Answer::None);
+        let mut d = Day18::new();
+        d.prob_size = 7;
+        d.start_t = 12; // override for test
+        assert_eq!(d.part2(EXAMPLE1), Answer::String("6,1".to_string()));
     }
     
 }

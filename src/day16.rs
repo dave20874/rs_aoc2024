@@ -157,16 +157,8 @@ impl Input {
 
         let mut best_cost = None;
 
-        // let mut best_tiles: HashSet<(usize, usize)> = HashSet::new();
-        // let mut optimal_paths = 0;
-
         // For every state, this records a set of states that lead to it with lowest score.
         let mut comes_from: HashMap<SolnState, HashSet<SolnState>> = HashMap::new();
-
-        // start and end positions are always in best tiles.
-        // best_tiles.insert(self.start);
-        // best_tiles.insert(self.end);
-        // let mut iterations = 0;
 
         while !to_explore.is_empty() {
             // Pop the best current state from the queue
