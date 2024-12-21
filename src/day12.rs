@@ -53,43 +53,6 @@ impl Region {
         let mut to_check: Vec<(usize, usize)> = Vec::new();
         area.insert(start);
         to_check.push(start);
-        // covered.insert((start.0, start.1));
-
-        // This way pushes every visited cell into to_check.  It checks if they are in the area
-        // when it pop's them back out.
-
-        // while let Some(cell) = to_check.pop() {
-        //     if !area.contains(&cell) {
-        //         if input.map[cell.1][cell.0] == key {
-        //             // This is part of the area
-        //             area.insert(cell);
-
-        //             // Check surroundings maybe
-        //             for adjacent in vec![(cell.0 as isize, cell.1 as isize+1), 
-        //                                                 (cell.0 as isize, cell.1 as isize-1), 
-        //                                                 (cell.0 as isize+1, cell.1 as isize), 
-        //                                                 (cell.0 as isize-1, cell.1 as isize)] {
-        //                 if (adjacent.0 >= 0) & (adjacent.0 < width as isize) & (adjacent.1 >= 0) & (adjacent.1 < height as isize) {
-        //                     let adjacent = (adjacent.0 as usize, adjacent.1 as usize);
-        //                     if !area.contains(&adjacent) {
-        //                         // covered.insert(adjacent);
-        //                         to_check.push(adjacent);
-        //                     }
-        //                 }
-        //                 else {
-        //                     // off the board, this represents part of the perimeter
-        //                     perimeter_crossings.insert( ((cell.0, cell.1), (adjacent.0, adjacent.1)) );
-        //                     perimeter += 1;
-        //                 }
-        //             }
-        //         }
-        //         else {
-        //             // not part of the area
-        //             perimeter_crossings.insert( ((cell.0, cell.1), (adjacent.0, adjacent.1)) );
-        //             perimeter += 1;
-        //         }
-        //     }
-        // }
 
         // Only push things to to_check after they are verified in the area.
         while let Some(cell) = to_check.pop() {
@@ -123,7 +86,6 @@ impl Region {
             }
         }
 
-
         Region { area, perimeter, perimeter_crossings }
     }
 
@@ -142,7 +104,6 @@ impl Region {
         for d in [Dir::N, Dir::S, Dir::E, Dir::W] {
             in_line_sides.insert(d, HashMap::new());
         }
-
 
         // Put sides into four vectors based on whether they
         // are NSEW edges of the area.  Then separate by lat/lon

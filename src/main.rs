@@ -186,7 +186,7 @@ mod test {
             (Answer::Numeric(260), Answer::String(String::from("24,48"))),
             (Answer::Numeric(236), Answer::Numeric(643685981770598)),
             (Answer::Numeric(1355), Answer::Numeric(1007335)),
-            (Answer::None, Answer::None),
+            (Answer::Numeric(206798), Answer::Numeric(251508572750680)),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
             (Answer::None, Answer::None),
