@@ -1,0 +1,1800 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+Working from seed: 16355495
+Working from seed: 7306092
+Working from seed: 9074712
+Working from seed: 11474671
+Working from seed: 6692099
+Working from seed: 14538993
+Working from seed: 752286
+    Initialized (0, -1, -1, 2) to 9
+Working from seed: 13910846
+Working from seed: 12356834
+Working from seed: 16004374
+Working from seed: 2740718
+Working from seed: 544625
+    Updated (0, -1, -1, 2) to 17
+Working from seed: 7094507
+Working from seed: 9245888
+Working from seed: 682786
+Working from seed: 13322931
+Working from seed: 9376162
+Working from seed: 9040945
+Working from seed: 6652883
+Working from seed: 3878407
+Working from seed: 9683423
+Working from seed: 5430384
+    Updated (0, -1, -1, 2) to 25
+Working from seed: 1935252
+Working from seed: 15528266
+Working from seed: 15452804
+Working from seed: 16671932
+Working from seed: 6597997
+Working from seed: 11498376
+Working from seed: 12505633
+Working from seed: 11367535
+Working from seed: 10575248
+    Updated (0, -1, -1, 2) to 32
+Working from seed: 8237862
+Working from seed: 4683178
+    Updated (0, -1, -1, 2) to 34
+Working from seed: 15150230
+Working from seed: 4996912
+Working from seed: 11883415
+Working from seed: 15067315
+Working from seed: 5972813
+Working from seed: 14350663
+Working from seed: 4187353
+Working from seed: 5397400
+    Updated (0, -1, -1, 2) to 36
+Working from seed: 8711856
+Working from seed: 12759999
+Working from seed: 3918414
+Working from seed: 6157217
+Working from seed: 13949801
+Working from seed: 2915162
+Working from seed: 5656649
+Working from seed: 15326359
+Working from seed: 15181194
+Working from seed: 2311724
+Working from seed: 3188511
+Working from seed: 6419320
+Working from seed: 8047156
+Working from seed: 8561513
+Working from seed: 13737351
+    Updated (0, -1, -1, 2) to 39
+Working from seed: 9541282
+Working from seed: 1462239
+Working from seed: 3965863
+    Updated (0, -1, -1, 2) to 43
+Working from seed: 13201350
+Working from seed: 11475096
+Working from seed: 12323499
+Working from seed: 1776027
+Working from seed: 887601
+Working from seed: 2911877
+Working from seed: 9165824
+Working from seed: 7006864
+Working from seed: 347033
+Working from seed: 1850086
+Working from seed: 12206657
+Working from seed: 6147286
+Working from seed: 5463900
+Working from seed: 12582475
+Working from seed: 16637871
+    Updated (0, -1, -1, 2) to 48
+    Already seen.
+Working from seed: 13372513
+Working from seed: 11363577
+Working from seed: 3388317
+Working from seed: 9775319
+    Updated (0, -1, -1, 2) to 52
+Working from seed: 12859104
+Working from seed: 4755359
+Working from seed: 3969680
+Working from seed: 15268865
+Working from seed: 5462903
+Working from seed: 4627506
+Working from seed: 12271783
+Working from seed: 16180723
+Working from seed: 6013745
+Working from seed: 9397314
+Working from seed: 13301726
+Working from seed: 5951006
+Working from seed: 10842424
+Working from seed: 12256412
+    Updated (0, -1, -1, 2) to 56
+Working from seed: 8169566
+Working from seed: 11585260
+Working from seed: 9629857
+Working from seed: 479269
+Working from seed: 4841627
+    Updated (0, -1, -1, 2) to 59
+Working from seed: 9043798
+Working from seed: 11086976
+Working from seed: 13595210
+Working from seed: 2315264
+    Updated (0, -1, -1, 2) to 63
+Working from seed: 10885925
+Working from seed: 201148
+Working from seed: 14015580
+Working from seed: 5415877
+Working from seed: 13658232
+Working from seed: 14126052
+Working from seed: 9788418
+Working from seed: 3344071
+Working from seed: 1244434
+Working from seed: 11586291
+Working from seed: 2579493
+    Updated (0, -1, -1, 2) to 69
+Working from seed: 556028
+Working from seed: 1658317
+    Updated (0, -1, -1, 2) to 72
+Working from seed: 8493761
+    Updated (0, -1, -1, 2) to 75
+Working from seed: 15696608
+Working from seed: 15742707
+Working from seed: 13400109
+Working from seed: 10590564
+Working from seed: 533288
+Working from seed: 3819003
+Working from seed: 2783916
+Working from seed: 7809934
+Working from seed: 9055848
+Working from seed: 14638499
+    Updated (0, -1, -1, 2) to 79
+Working from seed: 5297538
+Working from seed: 5032052
+Working from seed: 8498595
+Working from seed: 11470127
+    Updated (0, -1, -1, 2) to 85
+Working from seed: 2520339
+Working from seed: 10317168
+Working from seed: 15751495
+Working from seed: 15454688
+Working from seed: 4055563
+Working from seed: 15484933
+Working from seed: 6098818
+    Updated (0, -1, -1, 2) to 89
+Working from seed: 8596589
+Working from seed: 16393003
+Working from seed: 6139541
+Working from seed: 14936227
+Working from seed: 12087985
+Working from seed: 7846780
+    Updated (0, -1, -1, 2) to 94
+Working from seed: 10211433
+Working from seed: 4003057
+    Updated (0, -1, -1, 2) to 100
+Working from seed: 2084984
+Working from seed: 15404585
+Working from seed: 15519808
+Working from seed: 16250169
+Working from seed: 7766929
+Working from seed: 5183922
+Working from seed: 5418221
+Working from seed: 4506747
+Working from seed: 3113316
+Working from seed: 1109872
+Working from seed: 726287
+Working from seed: 13323031
+Working from seed: 10595888
+Working from seed: 12592231
+Working from seed: 3563803
+    Updated (0, -1, -1, 2) to 104
+Working from seed: 4483124
+Working from seed: 167809
+Working from seed: 4941422
+    Updated (0, -1, -1, 2) to 111
+Working from seed: 11797881
+Working from seed: 16683587
+    Updated (0, -1, -1, 2) to 114
+Working from seed: 9378759
+Working from seed: 10530411
+Working from seed: 12200076
+Working from seed: 13101324
+Working from seed: 3405785
+Working from seed: 5871376
+    Updated (0, -1, -1, 2) to 116
+Working from seed: 4401653
+Working from seed: 987154
+Working from seed: 2033646
+Working from seed: 5122293
+Working from seed: 7277671
+Working from seed: 1907906
+Working from seed: 2694127
+Working from seed: 7537219
+Working from seed: 2379211
+Working from seed: 14065286
+Working from seed: 2231872
+Working from seed: 11193164
+    Updated (0, -1, -1, 2) to 124
+Working from seed: 9303399
+Working from seed: 6401180
+Working from seed: 13811655
+Working from seed: 8203118
+Working from seed: 7135509
+Working from seed: 7689335
+    Updated (0, -1, -1, 2) to 129
+Working from seed: 15975357
+Working from seed: 5129325
+Working from seed: 13286538
+Working from seed: 7630933
+Working from seed: 8360173
+    Updated (0, -1, -1, 2) to 131
+    Already seen.
+Working from seed: 15634247
+Working from seed: 8381396
+Working from seed: 8611539
+Working from seed: 8973357
+Working from seed: 1889742
+Working from seed: 2017338
+Working from seed: 3505763
+Working from seed: 14266484
+Working from seed: 6099456
+Working from seed: 13666228
+Working from seed: 8390856
+Working from seed: 11062131
+    Updated (0, -1, -1, 2) to 137
+Working from seed: 2879496
+Working from seed: 12271391
+Working from seed: 2541591
+Working from seed: 4546994
+Working from seed: 810023
+Working from seed: 2058590
+Working from seed: 6061595
+Working from seed: 9744936
+Working from seed: 5329775
+Working from seed: 14042456
+Working from seed: 1367455
+Working from seed: 8984240
+Working from seed: 2334512
+Working from seed: 3728872
+    Updated (0, -1, -1, 2) to 141
+Working from seed: 10432641
+Working from seed: 2290770
+    Updated (0, -1, -1, 2) to 148
+Working from seed: 11227238
+Working from seed: 2888798
+Working from seed: 9726853
+Working from seed: 7117569
+Working from seed: 12577808
+Working from seed: 13411417
+Working from seed: 12281404
+Working from seed: 7796894
+Working from seed: 6818940
+Working from seed: 14289218
+Working from seed: 12789924
+    Updated (0, -1, -1, 2) to 156
+Working from seed: 3937554
+Working from seed: 11577300
+    Updated (0, -1, -1, 2) to 161
+Working from seed: 9498289
+Working from seed: 5453265
+Working from seed: 1375729
+Working from seed: 2534171
+Working from seed: 10420363
+Working from seed: 9584944
+Working from seed: 5897623
+Working from seed: 10927019
+Working from seed: 7596428
+Working from seed: 3309599
+Working from seed: 6263986
+    Updated (0, -1, -1, 2) to 165
+    Already seen.
+Working from seed: 11657697
+    Updated (0, -1, -1, 2) to 173
+Working from seed: 14910064
+Working from seed: 6082763
+Working from seed: 1115173
+Working from seed: 8445754
+Working from seed: 9641150
+Working from seed: 12654501
+Working from seed: 694430
+Working from seed: 3398229
+Working from seed: 15031711
+Working from seed: 4109133
+Working from seed: 5775264
+Working from seed: 10341821
+Working from seed: 332538
+Working from seed: 7981369
+Working from seed: 12171160
+Working from seed: 9260068
+Working from seed: 9787997
+Working from seed: 13556010
+Working from seed: 1818770
+Working from seed: 5134290
+Working from seed: 9378293
+Working from seed: 11384850
+    Updated (0, -1, -1, 2) to 180
+Working from seed: 2441521
+    Updated (0, -1, -1, 2) to 187
+Working from seed: 8352920
+Working from seed: 10267436
+Working from seed: 8544802
+    Updated (0, -1, -1, 2) to 196
+Working from seed: 7947027
+Working from seed: 1906010
+Working from seed: 417796
+    Updated (0, -1, -1, 2) to 205
+    Already seen.
+Working from seed: 11627608
+    Updated (0, -1, -1, 2) to 209
+Working from seed: 4790887
+Working from seed: 14940520
+    Updated (0, -1, -1, 2) to 211
+Working from seed: 9481152
+Working from seed: 14353969
+Working from seed: 15422787
+    Updated (0, -1, -1, 2) to 213
+Working from seed: 1965164
+Working from seed: 14274480
+Working from seed: 14618900
+Working from seed: 15548506
+Working from seed: 10411670
+Working from seed: 416373
+    Updated (0, -1, -1, 2) to 219
+Working from seed: 2476623
+Working from seed: 13045527
+    Updated (0, -1, -1, 2) to 227
+Working from seed: 6509486
+Working from seed: 5184832
+Working from seed: 9415630
+    Updated (0, -1, -1, 2) to 229
+Working from seed: 9389158
+    Updated (0, -1, -1, 2) to 232
+Working from seed: 14909582
+Working from seed: 16630789
+Working from seed: 304154
+Working from seed: 7597943
+Working from seed: 7821332
+Working from seed: 9141678
+Working from seed: 6395294
+Working from seed: 13671278
+Working from seed: 1047834
+Working from seed: 15881409
+Working from seed: 9733346
+Working from seed: 15522388
+Working from seed: 425828
+Working from seed: 12546569
+Working from seed: 9382647
+Working from seed: 5405131
+Working from seed: 10395508
+Working from seed: 6401530
+    Updated (0, -1, -1, 2) to 241
+Working from seed: 5065265
+    Updated (0, -1, -1, 2) to 247
+Working from seed: 9145048
+    Updated (0, -1, -1, 2) to 255
+Working from seed: 15303288
+Working from seed: 7665086
+Working from seed: 3114255
+Working from seed: 1524895
+Working from seed: 12762381
+Working from seed: 13449701
+Working from seed: 14567251
+Working from seed: 12760127
+Working from seed: 8014747
+Working from seed: 799174
+Working from seed: 5774608
+Working from seed: 1532155
+Working from seed: 11401793
+Working from seed: 13976499
+Working from seed: 14188787
+    Updated (0, -1, -1, 2) to 263
+Working from seed: 11486082
+Working from seed: 2721529
+Working from seed: 9476649
+Working from seed: 3372792
+    Updated (0, -1, -1, 2) to 266
+Working from seed: 8083638
+Working from seed: 15214487
+    Updated (0, -1, -1, 2) to 272
+Working from seed: 15258887
+Working from seed: 8341836
+Working from seed: 6609762
+Working from seed: 11265155
+Working from seed: 14618348
+Working from seed: 14049128
+    Updated (0, -1, -1, 2) to 274
+Working from seed: 15068217
+Working from seed: 1233360
+Working from seed: 2491819
+Working from seed: 10793225
+Working from seed: 11451394
+    Updated (0, -1, -1, 2) to 278
+Working from seed: 5905476
+    Updated (0, -1, -1, 2) to 283
+Working from seed: 5192902
+Working from seed: 11330868
+    Updated (0, -1, -1, 2) to 286
+Working from seed: 12433474
+    Updated (0, -1, -1, 2) to 294
+Working from seed: 12728400
+    Updated (0, -1, -1, 2) to 300
+    Already seen.
+Working from seed: 12109204
+Working from seed: 15677008
+Working from seed: 12504726
+Working from seed: 12547967
+Working from seed: 462260
+Working from seed: 13370608
+Working from seed: 13342162
+Working from seed: 13608754
+Working from seed: 4617495
+Working from seed: 16204053
+Working from seed: 6194515
+Working from seed: 7340687
+Working from seed: 7634131
+    Updated (0, -1, -1, 2) to 309
+Working from seed: 6486630
+Working from seed: 11979328
+Working from seed: 12659600
+Working from seed: 9886324
+Working from seed: 3100980
+Working from seed: 12232505
+Working from seed: 8494319
+Working from seed: 4232331
+Working from seed: 12802329
+Working from seed: 12352704
+Working from seed: 2245191
+Working from seed: 3092344
+Working from seed: 5720160
+Working from seed: 9565899
+    Updated (0, -1, -1, 2) to 311
+Working from seed: 10215008
+Working from seed: 8372607
+Working from seed: 3238596
+Working from seed: 14071350
+Working from seed: 4356819
+Working from seed: 2760056
+Working from seed: 10219385
+Working from seed: 7006811
+Working from seed: 3291527
+Working from seed: 16513085
+Working from seed: 12115980
+    Updated (0, -1, -1, 2) to 319
+Working from seed: 15888323
+Working from seed: 2625904
+    Updated (0, -1, -1, 2) to 328
+Working from seed: 1804635
+Working from seed: 16628818
+    Updated (0, -1, -1, 2) to 331
+Working from seed: 15623172
+    Updated (0, -1, -1, 2) to 336
+Working from seed: 3270142
+Working from seed: 12611376
+Working from seed: 14851387
+    Updated (0, -1, -1, 2) to 344
+Working from seed: 2614222
+Working from seed: 9387320
+Working from seed: 10554611
+    Updated (0, -1, -1, 2) to 349
+Working from seed: 15266417
+Working from seed: 15367907
+Working from seed: 10743108
+Working from seed: 3334606
+Working from seed: 15161926
+Working from seed: 15234298
+Working from seed: 7821399
+Working from seed: 10741339
+Working from seed: 4030163
+    Updated (0, -1, -1, 2) to 356
+    Already seen.
+Working from seed: 5578431
+Working from seed: 9254762
+Working from seed: 9926011
+Working from seed: 6941429
+    Updated (0, -1, -1, 2) to 365
+Working from seed: 1969633
+Working from seed: 1516052
+Working from seed: 5570973
+Working from seed: 16540746
+Working from seed: 14415530
+Working from seed: 15246841
+Working from seed: 15363099
+Working from seed: 8212854
+Working from seed: 7396326
+    Updated (0, -1, -1, 2) to 367
+Working from seed: 16458704
+Working from seed: 5213271
+Working from seed: 2962293
+Working from seed: 15413950
+Working from seed: 14429431
+Working from seed: 8901595
+Working from seed: 12991268
+Working from seed: 15054595
+Working from seed: 15121316
+Working from seed: 7749279
+Working from seed: 16375526
+Working from seed: 10147989
+    Updated (0, -1, -1, 2) to 375
+    Already seen.
+Working from seed: 15821680
+    Updated (0, -1, -1, 2) to 379
+Working from seed: 6248224
+Working from seed: 2962634
+Working from seed: 10577905
+Working from seed: 15956182
+Working from seed: 7155677
+    Updated (0, -1, -1, 2) to 387
+Working from seed: 10895744
+Working from seed: 2574737
+    Updated (0, -1, -1, 2) to 389
+Working from seed: 13534845
+Working from seed: 1520412
+Working from seed: 5947707
+    Updated (0, -1, -1, 2) to 393
+Working from seed: 16207228
+Working from seed: 15814603
+Working from seed: 15313374
+    Updated (0, -1, -1, 2) to 399
+    Already seen.
+Working from seed: 14606995
+Working from seed: 10688922
+Working from seed: 15137574
+Working from seed: 10432265
+    Updated (0, -1, -1, 2) to 403
+Working from seed: 14977665
+Working from seed: 9871721
+Working from seed: 1225880
+Working from seed: 7665618
+    Updated (0, -1, -1, 2) to 409
+Working from seed: 7596241
+Working from seed: 3384417
+Working from seed: 9288988
+Working from seed: 10301823
+Working from seed: 6366063
+Working from seed: 445636
+Working from seed: 10085622
+Working from seed: 8170110
+Working from seed: 6144659
+Working from seed: 13267661
+    Updated (0, -1, -1, 2) to 418
+Working from seed: 2771360
+Working from seed: 3196139
+Working from seed: 2374886
+Working from seed: 3332851
+Working from seed: 16683941
+Working from seed: 3421777
+Working from seed: 839570
+Working from seed: 11639216
+Working from seed: 9394079
+    Updated (0, -1, -1, 2) to 426
+Working from seed: 9142165
+    Updated (0, -1, -1, 2) to 434
+Working from seed: 12832663
+Working from seed: 11676270
+    Updated (0, -1, -1, 2) to 436
+Working from seed: 9355534
+Working from seed: 15805342
+Working from seed: 14699909
+    Updated (0, -1, -1, 2) to 439
+Working from seed: 3457622
+Working from seed: 2719571
+Working from seed: 1693505
+Working from seed: 10061968
+    Updated (0, -1, -1, 2) to 447
+Working from seed: 6486387
+Working from seed: 13817388
+Working from seed: 7640253
+Working from seed: 7270092
+Working from seed: 11765012
+Working from seed: 1611119
+Working from seed: 12348373
+Working from seed: 10404959
+Working from seed: 9985169
+    Updated (0, -1, -1, 2) to 455
+Working from seed: 659591
+    Updated (0, -1, -1, 2) to 459
+    Already seen.
+Working from seed: 12534083
+Working from seed: 15783837
+Working from seed: 2631019
+Working from seed: 9668395
+Working from seed: 4409367
+Working from seed: 3314191
+    Updated (0, -1, -1, 2) to 468
+Working from seed: 10652785
+Working from seed: 3209047
+Working from seed: 258323
+Working from seed: 15025102
+Working from seed: 4822757
+Working from seed: 8144425
+Working from seed: 14613221
+Working from seed: 693469
+Working from seed: 8275879
+Working from seed: 13757317
+    Updated (0, -1, -1, 2) to 472
+Working from seed: 6385033
+Working from seed: 5754045
+Working from seed: 3995963
+Working from seed: 8897699
+Working from seed: 3194615
+Working from seed: 10561759
+Working from seed: 11158775
+Working from seed: 1961401
+Working from seed: 2599534
+    Updated (0, -1, -1, 2) to 479
+Working from seed: 12201069
+    Updated (0, -1, -1, 2) to 486
+Working from seed: 2978281
+Working from seed: 8463294
+Working from seed: 1518239
+Working from seed: 1371250
+Working from seed: 13787619
+Working from seed: 12414743
+Working from seed: 9569282
+Working from seed: 11759708
+Working from seed: 7958736
+Working from seed: 12519293
+Working from seed: 6558851
+Working from seed: 900540
+Working from seed: 9263325
+    Updated (0, -1, -1, 2) to 491
+Working from seed: 14052061
+Working from seed: 16489157
+Working from seed: 2937886
+Working from seed: 5506290
+Working from seed: 6587704
+Working from seed: 4619727
+Working from seed: 350472
+Working from seed: 13326847
+Working from seed: 7610513
+Working from seed: 15444302
+Working from seed: 8057168
+Working from seed: 5500403
+Working from seed: 15618824
+Working from seed: 419285
+Working from seed: 8000078
+Working from seed: 12312730
+Working from seed: 2330594
+Working from seed: 4750302
+Working from seed: 3643365
+Working from seed: 6852216
+Working from seed: 6995981
+Working from seed: 12873380
+    Updated (0, -1, -1, 2) to 499
+Working from seed: 3842477
+Working from seed: 12160901
+Working from seed: 12210421
+Working from seed: 11169009
+Working from seed: 7960421
+Working from seed: 12110584
+Working from seed: 13078278
+Working from seed: 9710980
+Working from seed: 829484
+Working from seed: 10861954
+Working from seed: 14781751
+Working from seed: 10941828
+Working from seed: 16041757
+Working from seed: 8206377
+Working from seed: 396819
+Working from seed: 5760476
+Working from seed: 5402495
+    Updated (0, -1, -1, 2) to 505
+Working from seed: 7514766
+Working from seed: 10139258
+Working from seed: 9468761
+Working from seed: 5591255
+    Updated (0, -1, -1, 2) to 511
+Working from seed: 9290643
+Working from seed: 5617704
+Working from seed: 12271735
+Working from seed: 4551986
+Working from seed: 15537798
+Working from seed: 15934316
+Working from seed: 4330211
+    Updated (0, -1, -1, 2) to 519
+Working from seed: 11183900
+    Updated (0, -1, -1, 2) to 524
+Working from seed: 8206453
+    Updated (0, -1, -1, 2) to 533
+Working from seed: 14831107
+Working from seed: 11424940
+Working from seed: 6852335
+Working from seed: 14819572
+Working from seed: 717355
+Working from seed: 3860003
+Working from seed: 11724185
+Working from seed: 4369046
+Working from seed: 10987041
+    Updated (0, -1, -1, 2) to 539
+Working from seed: 9899101
+Working from seed: 13624120
+Working from seed: 7534946
+Working from seed: 10517274
+Working from seed: 5725484
+Working from seed: 12656548
+Working from seed: 2484236
+Working from seed: 8746140
+    Updated (0, -1, -1, 2) to 547
+Working from seed: 14061396
+Working from seed: 9736036
+    Updated (0, -1, -1, 2) to 552
+Working from seed: 2684682
+Working from seed: 16529307
+Working from seed: 5537938
+Working from seed: 16029308
+    Updated (0, -1, -1, 2) to 558
+    Already seen.
+    Already seen.
+Working from seed: 7379635
+Working from seed: 523601
+Working from seed: 16315881
+Working from seed: 9019675
+Working from seed: 10366540
+Working from seed: 1919464
+    Updated (0, -1, -1, 2) to 563
+Working from seed: 5265771
+    Updated (0, -1, -1, 2) to 567
+Working from seed: 5174846
+    Updated (0, -1, -1, 2) to 571
+Working from seed: 9288022
+    Updated (0, -1, -1, 2) to 573
+Working from seed: 2753622
+Working from seed: 5047932
+    Updated (0, -1, -1, 2) to 582
+Working from seed: 16647986
+Working from seed: 12880313
+Working from seed: 707760
+Working from seed: 8015427
+Working from seed: 11808301
+    Updated (0, -1, -1, 2) to 591
+Working from seed: 10899504
+Working from seed: 1729032
+    Updated (0, -1, -1, 2) to 600
+Working from seed: 8926399
+Working from seed: 12798750
+Working from seed: 11914259
+    Updated (0, -1, -1, 2) to 608
+Working from seed: 14662304
+Working from seed: 3057553
+Working from seed: 14810710
+Working from seed: 9404390
+Working from seed: 1991096
+Working from seed: 10386746
+    Updated (0, -1, -1, 2) to 613
+Working from seed: 2703842
+Working from seed: 13348901
+    Updated (0, -1, -1, 2) to 616
+Working from seed: 16291724
+Working from seed: 12747286
+Working from seed: 7080454
+    Updated (0, -1, -1, 2) to 625
+Working from seed: 12966287
+Working from seed: 12419936
+    Updated (0, -1, -1, 2) to 633
+Working from seed: 11930399
+Working from seed: 880806
+Working from seed: 2661054
+Working from seed: 14749283
+Working from seed: 8356029
+    Updated (0, -1, -1, 2) to 636
+Working from seed: 12133446
+Working from seed: 9041380
+Working from seed: 14244409
+Working from seed: 14408149
+Working from seed: 4693728
+Working from seed: 1901250
+Working from seed: 16019595
+Working from seed: 3443537
+Working from seed: 16621756
+    Updated (0, -1, -1, 2) to 640
+Working from seed: 10833212
+    Updated (0, -1, -1, 2) to 648
+Working from seed: 8721333
+Working from seed: 16430913
+    Updated (0, -1, -1, 2) to 655
+Working from seed: 15072586
+Working from seed: 643738
+Working from seed: 15363313
+    Updated (0, -1, -1, 2) to 658
+Working from seed: 3592889
+Working from seed: 9484584
+Working from seed: 5696875
+Working from seed: 7058369
+    Updated (0, -1, -1, 2) to 667
+Working from seed: 3485510
+Working from seed: 13526645
+Working from seed: 169445
+Working from seed: 3108435
+Working from seed: 10628856
+    Updated (0, -1, -1, 2) to 669
+Working from seed: 429284
+Working from seed: 14004768
+Working from seed: 410797
+Working from seed: 13302899
+Working from seed: 3902274
+Working from seed: 4408778
+Working from seed: 10344973
+    Updated (0, -1, -1, 2) to 676
+Working from seed: 243376
+Working from seed: 11986315
+Working from seed: 7412705
+Working from seed: 793282
+Working from seed: 8101225
+Working from seed: 8936220
+Working from seed: 14349765
+Working from seed: 2810375
+Working from seed: 12659551
+Working from seed: 1229133
+Working from seed: 12634428
+Working from seed: 8051930
+Working from seed: 2597346
+Working from seed: 7972133
+Working from seed: 2523718
+Working from seed: 14599666
+Working from seed: 1409306
+Working from seed: 2074869
+Working from seed: 10284366
+Working from seed: 16008425
+Working from seed: 9119207
+Working from seed: 13487415
+Working from seed: 10138114
+Working from seed: 1128840
+Working from seed: 6185974
+Working from seed: 5377335
+Working from seed: 7988790
+Working from seed: 6978808
+Working from seed: 13878564
+Working from seed: 11304195
+Working from seed: 5896792
+Working from seed: 12005098
+Working from seed: 6432999
+Working from seed: 8342603
+Working from seed: 9719197
+Working from seed: 13868640
+Working from seed: 11080669
+Working from seed: 13793037
+    Updated (0, -1, -1, 2) to 684
+    Already seen.
+Working from seed: 3360406
+    Updated (0, -1, -1, 2) to 689
+Working from seed: 11238873
+Working from seed: 594762
+Working from seed: 4494944
+Working from seed: 16090330
+Working from seed: 3877570
+Working from seed: 9592444
+Working from seed: 16129757
+Working from seed: 6734221
+Working from seed: 15059440
+Working from seed: 13910999
+Working from seed: 14003458
+    Updated (0, -1, -1, 2) to 691
+Working from seed: 8574435
+    Updated (0, -1, -1, 2) to 699
+Working from seed: 5724080
+Working from seed: 6886456
+Working from seed: 517935
+Working from seed: 5746756
+    Updated (0, -1, -1, 2) to 708
+Working from seed: 16163722
+    Updated (0, -1, -1, 2) to 716
+Working from seed: 11403580
+    Updated (0, -1, -1, 2) to 725
+    Already seen.
+Working from seed: 6909668
+Working from seed: 9750938
+    Updated (0, -1, -1, 2) to 733
+Working from seed: 16365400
+Working from seed: 13817037
+    Updated (0, -1, -1, 2) to 737
+Working from seed: 3843178
+Working from seed: 5172259
+Working from seed: 11872378
+Working from seed: 284179
+Working from seed: 13780790
+Working from seed: 6114196
+    Updated (0, -1, -1, 2) to 739
+    Already seen.
+Working from seed: 12790331
+Working from seed: 11836613
+Working from seed: 16695083
+Working from seed: 2259587
+Working from seed: 6513488
+    Updated (0, -1, -1, 2) to 743
+Working from seed: 15219576
+    Updated (0, -1, -1, 2) to 748
+    Already seen.
+Working from seed: 1830142
+    Updated (0, -1, -1, 2) to 750
+Working from seed: 1415937
+Working from seed: 13113158
+Working from seed: 13893451
+Working from seed: 14970937
+    Updated (0, -1, -1, 2) to 758
+    Already seen.
+Working from seed: 15736553
+Working from seed: 13062474
+Working from seed: 5157625
+    Updated (0, -1, -1, 2) to 760
+Working from seed: 16147599
+Working from seed: 5824440
+Working from seed: 10463559
+Working from seed: 16236545
+Working from seed: 8162459
+Working from seed: 7378138
+Working from seed: 3330211
+Working from seed: 16141850
+Working from seed: 16509594
+Working from seed: 7307811
+Working from seed: 9388576
+Working from seed: 2257635
+Working from seed: 2553392
+Working from seed: 3235227
+Working from seed: 15778407
+    Updated (0, -1, -1, 2) to 767
+Working from seed: 9219366
+    Updated (0, -1, -1, 2) to 772
+Working from seed: 8410623
+Working from seed: 1055757
+Working from seed: 12613034
+    Updated (0, -1, -1, 2) to 781
+Working from seed: 9571228
+    Updated (0, -1, -1, 2) to 787
+Working from seed: 6521483
+Working from seed: 2211255
+    Updated (0, -1, -1, 2) to 793
+Working from seed: 10183808
+Working from seed: 11434644
+Working from seed: 11309762
+Working from seed: 3735550
+Working from seed: 1028019
+Working from seed: 13924702
+Working from seed: 16389979
+    Updated (0, -1, -1, 2) to 798
+Working from seed: 1484211
+Working from seed: 5853728
+Working from seed: 10572718
+Working from seed: 6168160
+Working from seed: 1502257
+Working from seed: 5908996
+Working from seed: 364466
+Working from seed: 13949241
+    Updated (0, -1, -1, 2) to 807
+Working from seed: 7917756
+Working from seed: 9286202
+Working from seed: 14674628
+Working from seed: 10937058
+Working from seed: 7243224
+Working from seed: 6621394
+Working from seed: 2592819
+    Updated (0, -1, -1, 2) to 810
+Working from seed: 14653207
+    Updated (0, -1, -1, 2) to 814
+Working from seed: 6579128
+Working from seed: 6743345
+Working from seed: 10320535
+Working from seed: 13202400
+Working from seed: 1224882
+Working from seed: 14374298
+Working from seed: 9940162
+Working from seed: 12065322
+Working from seed: 5752460
+Working from seed: 4029548
+Working from seed: 15752778
+    Updated (0, -1, -1, 2) to 820
+    Already seen.
+Working from seed: 8685028
+Working from seed: 14925464
+Working from seed: 9118137
+Working from seed: 1756444
+Working from seed: 1814420
+Working from seed: 6312189
+Working from seed: 4943868
+Working from seed: 5262468
+Working from seed: 5013067
+Working from seed: 9488933
+Working from seed: 12540870
+    Updated (0, -1, -1, 2) to 825
+Working from seed: 5817947
+Working from seed: 5185176
+    Updated (0, -1, -1, 2) to 829
+Working from seed: 832514
+    Updated (0, -1, -1, 2) to 831
+Working from seed: 14639100
+Working from seed: 10965005
+Working from seed: 339750
+Working from seed: 11491082
+Working from seed: 8377352
+Working from seed: 5965403
+Working from seed: 14109616
+Working from seed: 12109790
+Working from seed: 1915097
+Working from seed: 6497178
+Working from seed: 3422252
+Working from seed: 3508780
+Working from seed: 9014779
+Working from seed: 10975354
+Working from seed: 12453435
+Working from seed: 14849774
+Working from seed: 4377398
+    Updated (0, -1, -1, 2) to 839
+Working from seed: 7541250
+    Updated (0, -1, -1, 2) to 848
+Working from seed: 9182022
+Working from seed: 4125485
+Working from seed: 839253
+Working from seed: 10296506
+Working from seed: 10611754
+Working from seed: 13966450
+Working from seed: 13881729
+Working from seed: 7006114
+Working from seed: 14211268
+Working from seed: 15923321
+Working from seed: 10507880
+Working from seed: 13462958
+Working from seed: 10742882
+Working from seed: 13516353
+Working from seed: 882439
+Working from seed: 11001122
+Working from seed: 974021
+    Updated (0, -1, -1, 2) to 854
+Working from seed: 425580
+Working from seed: 6287197
+Working from seed: 1066310
+    Updated (0, -1, -1, 2) to 857
+Working from seed: 15121963
+    Updated (0, -1, -1, 2) to 864
+Working from seed: 16058294
+Working from seed: 11517327
+Working from seed: 8564572
+Working from seed: 3419355
+Working from seed: 8018371
+Working from seed: 13355309
+Working from seed: 4158436
+    Updated (0, -1, -1, 2) to 867
+Working from seed: 827761
+Working from seed: 11738038
+Working from seed: 15538246
+    Updated (0, -1, -1, 2) to 876
+Working from seed: 7885726
+Working from seed: 8133251
+Working from seed: 15303890
+Working from seed: 16138944
+Working from seed: 11251898
+Working from seed: 9300266
+Working from seed: 15250224
+Working from seed: 12074006
+Working from seed: 6087435
+    Updated (0, -1, -1, 2) to 885
+Working from seed: 8864872
+Working from seed: 16180924
+Working from seed: 7238186
+Working from seed: 8515063
+Working from seed: 7286440
+Working from seed: 4410604
+Working from seed: 491290
+Working from seed: 10515272
+Working from seed: 4089367
+Working from seed: 13812534
+Working from seed: 8205665
+Working from seed: 8679084
+Working from seed: 13802019
+Working from seed: 5272329
+Working from seed: 8006233
+Working from seed: 14786112
+Working from seed: 4872979
+Working from seed: 14524662
+Working from seed: 13284713
+Working from seed: 15613942
+Working from seed: 9857613
+Working from seed: 7449091
+Working from seed: 3857018
+Working from seed: 1537588
+Working from seed: 5165046
+Working from seed: 629862
+Working from seed: 10557271
+Working from seed: 5106279
+Working from seed: 15979055
+Working from seed: 10271906
+    Updated (0, -1, -1, 2) to 888
+Working from seed: 2913680
+    Updated (0, -1, -1, 2) to 896
+Working from seed: 13274834
+    Updated (0, -1, -1, 2) to 904
+Working from seed: 7954825
+Working from seed: 6140869
+Working from seed: 16422939
+Working from seed: 11621403
+Working from seed: 7889451
+Working from seed: 15083431
+Working from seed: 5330366
+Working from seed: 3055508
+Working from seed: 15884157
+Working from seed: 5022012
+Working from seed: 1540475
+Working from seed: 12771209
+Working from seed: 6127207
+Working from seed: 5793692
+Working from seed: 13636040
+Working from seed: 12848922
+Working from seed: 16453044
+Working from seed: 10637081
+    Updated (0, -1, -1, 2) to 911
+Working from seed: 5589040
+Working from seed: 12637824
+Working from seed: 7529064
+    Updated (0, -1, -1, 2) to 915
+Working from seed: 16538265
+Working from seed: 575056
+    Updated (0, -1, -1, 2) to 920
+Working from seed: 16544457
+Working from seed: 3740872
+Working from seed: 13883832
+Working from seed: 3126409
+    Updated (0, -1, -1, 2) to 927
+Working from seed: 11805775
+Working from seed: 5562159
+Working from seed: 5556063
+Working from seed: 1371104
+    Updated (0, -1, -1, 2) to 935
+Working from seed: 1227100
+Working from seed: 13883323
+Working from seed: 2648652
+Working from seed: 6633608
+Working from seed: 12731791
+Working from seed: 8445615
+Working from seed: 2976428
+Working from seed: 8036209
+Working from seed: 16732844
+Working from seed: 10394221
+Working from seed: 9501963
+Working from seed: 13141982
+Working from seed: 12855197
+Working from seed: 7259337
+Working from seed: 13937424
+Working from seed: 15125657
+Working from seed: 12595822
+Working from seed: 3525096
+    Updated (0, -1, -1, 2) to 939
+Working from seed: 9985264
+    Updated (0, -1, -1, 2) to 947
+Working from seed: 13576120
+Working from seed: 161057
+Working from seed: 4457407
+Working from seed: 16270140
+Working from seed: 8905236
+Working from seed: 3671826
+Working from seed: 11029759
+Working from seed: 6506141
+Working from seed: 8715719
+Working from seed: 3768512
+Working from seed: 3647307
+    Updated (0, -1, -1, 2) to 952
+Working from seed: 14340615
+Working from seed: 2663104
+    Updated (0, -1, -1, 2) to 955
+Working from seed: 13986200
+    Updated (0, -1, -1, 2) to 964
+Working from seed: 12683613
+Working from seed: 1620873
+Working from seed: 11003753
+Working from seed: 15835739
+Working from seed: 16594752
+Working from seed: 12341024
+Working from seed: 1588949
+Working from seed: 4859521
+Working from seed: 3391101
+Working from seed: 3282439
+Working from seed: 7738223
+Working from seed: 6188772
+Working from seed: 13967336
+Working from seed: 1303225
+Working from seed: 13380204
+Working from seed: 1313703
+Working from seed: 9207209
+Working from seed: 15558220
+Working from seed: 1587796
+Working from seed: 15840836
+    Updated (0, -1, -1, 2) to 970
+Working from seed: 14830593
+Working from seed: 15109644
+Working from seed: 6627336
+    Updated (0, -1, -1, 2) to 975
+Working from seed: 6677034
+    Updated (0, -1, -1, 2) to 983
+Working from seed: 13130629
+    Updated (0, -1, -1, 2) to 987
+Working from seed: 329740
+Working from seed: 12837478
+Working from seed: 5940805
+Working from seed: 11127189
+Working from seed: 1798682
+    Updated (0, -1, -1, 2) to 996
+Working from seed: 6907739
+Working from seed: 3434302
+Working from seed: 9927979
+Working from seed: 15284172
+    Updated (0, -1, -1, 2) to 998
+Working from seed: 6790858
+Working from seed: 3134734
+Working from seed: 5025922
+Working from seed: 9195892
+Working from seed: 11981275
+Working from seed: 14955018
+Working from seed: 5920880
+Working from seed: 9156227
+    Updated (0, -1, -1, 2) to 1003
+Working from seed: 16099765
+Working from seed: 8014103
+Working from seed: 1707774
+Working from seed: 2042235
+Working from seed: 190565
+Working from seed: 13008984
+Working from seed: 15656021
+Working from seed: 16400806
+Working from seed: 12999650
+Working from seed: 15456286
+Working from seed: 12475866
+    Updated (0, -1, -1, 2) to 1006
+Working from seed: 5795553
+Working from seed: 2588309
+Working from seed: 15851346
+    Updated (0, -1, -1, 2) to 1015
+Working from seed: 560183
+Working from seed: 12766526
+Working from seed: 13882518
+Working from seed: 5007906
+Working from seed: 912351
+    Updated (0, -1, -1, 2) to 1020
+Working from seed: 16554200
+    Updated (0, -1, -1, 2) to 1029
+Working from seed: 8210943
+Working from seed: 299273
+Working from seed: 10780100
+Working from seed: 13763871
+Working from seed: 5941045
+Working from seed: 10080451
+Working from seed: 13880571
+    Updated (0, -1, -1, 2) to 1033
+Working from seed: 4535743
+Working from seed: 5846253
+Working from seed: 11889407
+Working from seed: 15621952
+Working from seed: 9413091
+    Updated (0, -1, -1, 2) to 1037
+Working from seed: 1873088
+Working from seed: 1636130
+    Updated (0, -1, -1, 2) to 1046
+Working from seed: 14624681
+    Updated (0, -1, -1, 2) to 1053
+Working from seed: 7717801
+Working from seed: 3403234
+    Updated (0, -1, -1, 2) to 1056
+Working from seed: 3716468
+Working from seed: 3350833
+Working from seed: 9344444
+Working from seed: 7354680
+Working from seed: 6500780
+Working from seed: 6895679
+Working from seed: 11073190
+Working from seed: 5615220
+Working from seed: 12537516
+    Updated (0, -1, -1, 2) to 1061
+Working from seed: 2388977
+Working from seed: 9108677
+Working from seed: 7939656
+Working from seed: 9005262
+    Updated (0, -1, -1, 2) to 1063
+Working from seed: 11734919
+Working from seed: 783901
+Working from seed: 6446530
+Working from seed: 12124405
+Working from seed: 2453304
+Working from seed: 12391386
+    Updated (0, -1, -1, 2) to 1068
+Working from seed: 15410727
+Working from seed: 3325204
+Working from seed: 11071328
+Working from seed: 8022552
+Working from seed: 14289950
+Working from seed: 12686747
+Working from seed: 4206380
+Working from seed: 6373552
+Working from seed: 8082204
+Working from seed: 9770662
+Working from seed: 7222714
+Working from seed: 11006173
+Working from seed: 9129761
+Working from seed: 7256717
+Working from seed: 299003
+Working from seed: 4156717
+    Updated (0, -1, -1, 2) to 1076
+    Already seen.
+Working from seed: 4215183
+Working from seed: 5494183
+Working from seed: 14549945
+Working from seed: 14009527
+Working from seed: 14040794
+    Updated (0, -1, -1, 2) to 1081
+Working from seed: 13192182
+Working from seed: 4179608
+Working from seed: 6791084
+Working from seed: 7752729
+Working from seed: 15961200
+Working from seed: 14433350
+Working from seed: 3012922
+    Updated (0, -1, -1, 2) to 1087
+Working from seed: 16760373
+Working from seed: 6094456
+Working from seed: 13982359
+Working from seed: 13422920
+Working from seed: 8737392
+Working from seed: 2707484
+    Updated (0, -1, -1, 2) to 1091
+Working from seed: 1577699
+Working from seed: 3589878
+Working from seed: 15159888
+Working from seed: 8634958
+Working from seed: 9304772
+Working from seed: 5999293
+Working from seed: 9006517
+    Updated (0, -1, -1, 2) to 1100
+Working from seed: 12500848
+    Updated (0, -1, -1, 2) to 1109
+Working from seed: 12005633
+Working from seed: 6806489
+Working from seed: 2364909
+    Updated (0, -1, -1, 2) to 1114
+Working from seed: 13796109
+    Updated (0, -1, -1, 2) to 1118
+Working from seed: 12962677
+Working from seed: 3786770
+Working from seed: 9379311
+Working from seed: 10445706
+Working from seed: 292273
+Working from seed: 14259772
+Working from seed: 872357
+Working from seed: 4793159
+    Updated (0, -1, -1, 2) to 1120
+Working from seed: 7742248
+Working from seed: 7015058
+Working from seed: 4261442
+Working from seed: 16417115
+Working from seed: 8487156
+Working from seed: 2912213
+    Updated (0, -1, -1, 2) to 1123
+Working from seed: 1891082
+Working from seed: 1687233
+Working from seed: 11939702
+    Updated (0, -1, -1, 2) to 1130
+Working from seed: 10246203
+Working from seed: 413354
+Working from seed: 6149746
+Working from seed: 11180409
+    Updated (0, -1, -1, 2) to 1139
+Working from seed: 5221768
+    Updated (0, -1, -1, 2) to 1145
+Working from seed: 14872167
+Working from seed: 15948164
+    Updated (0, -1, -1, 2) to 1152
+Working from seed: 6074868
+Working from seed: 16133947
+Working from seed: 8434634
+Working from seed: 3149562
+Working from seed: 8849685
+    Updated (0, -1, -1, 2) to 1155
+Working from seed: 9021533
+Working from seed: 1167436
+Working from seed: 12332406
+Working from seed: 13691376
+Working from seed: 1321887
+Working from seed: 14769819
+Working from seed: 13436550
+Working from seed: 13683135
+Working from seed: 2208644
+Working from seed: 2804103
+Working from seed: 12960714
+Working from seed: 7984575
+Working from seed: 11748548
+    Updated (0, -1, -1, 2) to 1161
+Working from seed: 12218241
+Working from seed: 4855949
+    Updated (0, -1, -1, 2) to 1164
+Working from seed: 7555675
+    Updated (0, -1, -1, 2) to 1170
+Working from seed: 5620418
+Working from seed: 1968579
+Working from seed: 15135474
+Working from seed: 6634373
+Working from seed: 12459949
+Working from seed: 14985629
+Working from seed: 8775971
+    Updated (0, -1, -1, 2) to 1177
+Working from seed: 2895917
+Working from seed: 1475605
+Working from seed: 5197424
+Working from seed: 13612376
+Working from seed: 16342799
+Working from seed: 1112795
+Working from seed: 9755861
+    Updated (0, -1, -1, 2) to 1182
+Working from seed: 7283170
+Working from seed: 3819302
+Working from seed: 8101638
+    Updated (0, -1, -1, 2) to 1186
+Working from seed: 9495849
+    Updated (0, -1, -1, 2) to 1190
+Working from seed: 5675162
+Working from seed: 9629655
+Working from seed: 1978300
+Working from seed: 13733501
+    Updated (0, -1, -1, 2) to 1199
+Working from seed: 11707012
+Working from seed: 12472562
+Working from seed: 9124707
+Working from seed: 5119028
+Working from seed: 11485308
+Working from seed: 11702188
+Working from seed: 1256796
+Working from seed: 8450569
+Working from seed: 8362021
+Working from seed: 5574659
+Working from seed: 14405854
+    Updated (0, -1, -1, 2) to 1206
+Working from seed: 4021599
+Working from seed: 13837404
+    Updated (0, -1, -1, 2) to 1209
+Working from seed: 10901519
+Working from seed: 272220
+Working from seed: 9143472
+Working from seed: 8049071
+Working from seed: 772456
+Working from seed: 13471830
+Working from seed: 3082447
+Working from seed: 9783639
+Working from seed: 14154206
+Working from seed: 818149
+Working from seed: 16027768
+Working from seed: 6585192
+Working from seed: 9471428
+Working from seed: 10843948
+Working from seed: 13545215
+    Updated (0, -1, -1, 2) to 1218
+Working from seed: 6244057
+Working from seed: 1669182
+Working from seed: 11864736
+    Updated (0, -1, -1, 2) to 1224
+Working from seed: 6782099
+Working from seed: 8924955
+Working from seed: 14128928
+Working from seed: 8604813
+Working from seed: 13664906
+Working from seed: 14507749
+Working from seed: 6755699
+Working from seed: 13655641
+Working from seed: 4137575
+Working from seed: 7666147
+Working from seed: 14964471
+Working from seed: 6514674
+Working from seed: 8963075
+Working from seed: 5562046
+Working from seed: 9620882
+Working from seed: 16294497
+Working from seed: 4808785
+Working from seed: 3251207
+Working from seed: 13217085
+Working from seed: 8335311
+    Updated (0, -1, -1, 2) to 1226
+Working from seed: 15369067
+Working from seed: 12015669
+Working from seed: 2273449
+    Updated (0, -1, -1, 2) to 1228
+Working from seed: 6349913
+Working from seed: 1758315
+Working from seed: 8968940
+Working from seed: 1556140
+Working from seed: 4308668
+Working from seed: 13261961
+Working from seed: 4362078
+Working from seed: 8229740
+Working from seed: 1841777
+    Updated (0, -1, -1, 2) to 1235
+Working from seed: 6097751
+Working from seed: 14958738
+    Updated (0, -1, -1, 2) to 1238
+Working from seed: 1121837
+Working from seed: 10554609
+Working from seed: 5950659
+Working from seed: 10105817
+    Updated (0, -1, -1, 2) to 1244
+Working from seed: 6480612
+Working from seed: 1887679
+Working from seed: 9732212
+Working from seed: 8591268
+Working from seed: 2165403
+Working from seed: 3758981
+Working from seed: 4745897
+Working from seed: 4434045
+Working from seed: 14871874
+Working from seed: 3547089
+Working from seed: 8752741
+Working from seed: 14276229
+Working from seed: 13868982
+Working from seed: 9334322
+    Updated (0, -1, -1, 2) to 1250
+Working from seed: 3317976
+Working from seed: 9516944
+    Updated (0, -1, -1, 2) to 1252
+Working from seed: 1615687
+    Updated (0, -1, -1, 2) to 1261
+Working from seed: 141831
+    Updated (0, -1, -1, 2) to 1267
+Working from seed: 14540899
+Working from seed: 6913894
+Working from seed: 10251928
+Working from seed: 1990673
+Working from seed: 14129002
+Working from seed: 597336
+Working from seed: 12376934
+Working from seed: 4615386
+Working from seed: 13833779
+    Updated (0, -1, -1, 2) to 1276
+    Already seen.
+Working from seed: 2539224
+Working from seed: 4435805
+Working from seed: 6459159
+Working from seed: 2732188
+Working from seed: 9948716
+Working from seed: 11191582
+    Updated (0, -1, -1, 2) to 1285
+Working from seed: 9120947
+    Updated (0, -1, -1, 2) to 1288
+Working from seed: 728639
+Working from seed: 5883358
+Working from seed: 11807598
+Working from seed: 13121983
+Working from seed: 3827402
+Working from seed: 15190241
+Working from seed: 15294617
+    Updated (0, -1, -1, 2) to 1291
+Working from seed: 13906266
+Working from seed: 10046130
+    Updated (0, -1, -1, 2) to 1294
+Working from seed: 11534316
+Working from seed: 4988194
+Working from seed: 11532724
+Working from seed: 5075846
+Working from seed: 9052583
+    Updated (0, -1, -1, 2) to 1297
+Working from seed: 11873316
+Working from seed: 2385068
+Working from seed: 15357955
+Working from seed: 15456486
+Working from seed: 4689668
+Working from seed: 14108117
+Working from seed: 4190429
+Working from seed: 10599736
+Working from seed: 7061119
+    Updated (0, -1, -1, 2) to 1305
+Working from seed: 3818670
+Working from seed: 15826148
+Working from seed: 12241537
+Working from seed: 7422618
+Working from seed: 7312761
+Working from seed: 2072449
+Working from seed: 6942583
+Working from seed: 11627167
+Working from seed: 5047443
+Working from seed: 9121018
+Working from seed: 14212120
+Working from seed: 5100512
+Working from seed: 12164675
+    Updated (0, -1, -1, 2) to 1307
+Working from seed: 3450377
+    Updated (0, -1, -1, 2) to 1311
+Working from seed: 10738772
+Working from seed: 11087588
+Working from seed: 12947416
+Working from seed: 13728074
+Working from seed: 14984033
+Working from seed: 5221467
+Working from seed: 10909037
+Working from seed: 8255212
+Working from seed: 16291096
+Working from seed: 1598290
+Working from seed: 15559184
+Working from seed: 15198917
+Working from seed: 15050767
+    Updated (0, -1, -1, 2) to 1314
+Working from seed: 11888129
+Working from seed: 269533
+Working from seed: 7869530
+Working from seed: 817134
+Working from seed: 13631455
+    Updated (0, -1, -1, 2) to 1318
+Working from seed: 6266239
+Working from seed: 15684844
+Working from seed: 14602179
+Working from seed: 11238340
+Working from seed: 16069605
+Working from seed: 598716
+Working from seed: 15651534
+Working from seed: 9365839
+Working from seed: 7311894
+    Updated (0, -1, -1, 2) to 1322
+Working from seed: 15953892
+Working from seed: 8203116
+Working from seed: 3379988
+Working from seed: 4203276
+Working from seed: 10232804
+Working from seed: 11220634
+Working from seed: 9795786
+Working from seed: 5291512
+Working from seed: 2493176
+Working from seed: 4399721
+Working from seed: 3360537
+Working from seed: 5450163
+Working from seed: 13749937
+Working from seed: 4211356
+Working from seed: 2647956
+Working from seed: 8562719
+Working from seed: 285161
+Working from seed: 7375758
+Working from seed: 12332028
+Working from seed: 12596222
+Working from seed: 8503371
+Working from seed: 13106210
+Working from seed: 15363602
+Working from seed: 6073658
+Working from seed: 1065211
+Working from seed: 3786609
+Working from seed: 3849725
+    Updated (0, -1, -1, 2) to 1325
+Working from seed: 9522896
+Working from seed: 10403233
+Working from seed: 4063612
+Working from seed: 12597902
+Working from seed: 13655653
+Working from seed: 2856246
+Working from seed: 12870400
+Working from seed: 12459444
+Working from seed: 1765189
+    Updated (0, -1, -1, 2) to 1332
+Working from seed: 4220250
+Working from seed: 6558480
+Working from seed: 7858654
+Working from seed: 6039762
+Working from seed: 1181614
+Working from seed: 15412452
+Working from seed: 2938938
+Working from seed: 9835127
+Working from seed: 16124895
+Working from seed: 10062019
+Working from seed: 1040744
+Working from seed: 15351048
+    Updated (0, -1, -1, 2) to 1338
+Working from seed: 3794013
+Working from seed: 9304992
+Working from seed: 3377036
+Working from seed: 4946419
+    Updated (0, -1, -1, 2) to 1346
+Working from seed: 14255282
+Working from seed: 3822964
+Working from seed: 14077843
+Working from seed: 15426503
+Working from seed: 257630
+    Updated (0, -1, -1, 2) to 1348
+Working from seed: 14853622
+Working from seed: 7394545
+Working from seed: 4520123
+Working from seed: 13325751
+Working from seed: 8009156
+Working from seed: 15576380
+    Updated (0, -1, -1, 2) to 1357
+Working from seed: 2790970
+Working from seed: 4420879
+Working from seed: 3203713
+Working from seed: 2446521
+Working from seed: 13231147
+Working from seed: 539289
+Working from seed: 13800165
+Working from seed: 16179240
+Working from seed: 16434819
+Working from seed: 2703085
+Working from seed: 13494024
+Working from seed: 16175119
+    Updated (0, -1, -1, 2) to 1365
+Working from seed: 8801181
+Working from seed: 8779782
+Working from seed: 2981294
+Working from seed: 15406100
+    Updated (0, -1, -1, 2) to 1373
+Working from seed: 6835542
+Working from seed: 16128172
+    Updated (0, -1, -1, 2) to 1377
+Working from seed: 10007428
+    Updated (0, -1, -1, 2) to 1382
+Working from seed: 5758783
+Working from seed: 15702320
+Working from seed: 9390039
+    Updated (0, -1, -1, 2) to 1386
+Working from seed: 4977075
+Working from seed: 1770842
+    Updated (0, -1, -1, 2) to 1394
+Working from seed: 3860642
+Working from seed: 4372583
+Working from seed: 6355029
+Working from seed: 12465192
+Working from seed: 437641
+Working from seed: 10756325
+Working from seed: 3754903
+Working from seed: 3362249
+Working from seed: 12328697
+Working from seed: 3290721
+Working from seed: 4094626
+    Updated (0, -1, -1, 2) to 1399
+Working from seed: 1286710
+Working from seed: 7694308
+Working from seed: 575150
+    Updated (0, -1, -1, 2) to 1403
+Working from seed: 11241816
+    Updated (0, -1, -1, 2) to 1408
+Working from seed: 4868529
+Working from seed: 12071627
+Working from seed: 13409844
+Working from seed: 3652961
+Working from seed: 15584934
+Working from seed: 7330653
+Working from seed: 5564016
+Working from seed: 13338318
+    Updated (0, -1, -1, 2) to 1416
+Working from seed: 5136564
+Working from seed: 10459150
+    Updated (0, -1, -1, 2) to 1424
+Working from seed: 8391913
+Working from seed: 16025852
+Working from seed: 4882787
+Working from seed: 16658885
+Working from seed: 15634673
+Working from seed: 16512029
+Working from seed: 5399396
+Working from seed: 4068981
+    Updated (0, -1, -1, 2) to 1428
+Working from seed: 13136349
+Working from seed: 16101150
+    Updated (0, -1, -1, 2) to 1433
+Working from seed: 7392333
+Working from seed: 5991389
+Working from seed: 10820000
+Working from seed: 13188949
+Working from seed: 6833215
+Working from seed: 2451920
+Working from seed: 9198044
+    Updated (0, -1, -1, 2) to 1436
+Working from seed: 16063380
+    Updated (0, -1, -1, 2) to 1444
+Working from seed: 10726442
+Working from seed: 16174686
+Working from seed: 7458090
+Working from seed: 7345654
+Working from seed: 8534031
+Working from seed: 1919401
+Working from seed: 9842027
+Working from seed: 1304263
+Working from seed: 1401883
+Working from seed: 2874015
+    Updated (0, -1, -1, 2) to 1447
+Working from seed: 3935047
+    Updated (0, -1, -1, 2) to 1450
+Working from seed: 16088736
+Working from seed: 16072516
+Working from seed: 3033291
+Working from seed: 10812572
+test test::test_day ... FAILED
+
+failures:
+
+failures:
+    test::test_day
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 143 filtered out; finished in 0.34s
+
