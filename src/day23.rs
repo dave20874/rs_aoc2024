@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 use lazy_static::lazy_static;
 use regex::Regex;
@@ -39,7 +39,8 @@ impl Input {
 
 struct Network {
     nodes: Vec<String>,         // Nodes are identified by their position in nodes vec.
-    neighbors: Vec<Vec<usize>>,  // For each node, a Vector of connected nodes, (ref by index.)
+    neighbors: Vec<(usize, usize)>,  // For each node, a Vector of connected nodes, (ref by index.)
+    fc_n: Vec<HashSet<Vec<usize>>>,
 }
 
 impl Network {
@@ -55,9 +56,8 @@ impl Network {
                 None => {
                     // New node id, register in nodes and name_to_id
                     nodes.push(pair.first.clone());
-                    neighbors.push(Vec::new());
-                    name_to_id.insert(pair.first.clone(), nodes.len());
-                    nodes.len()
+                    name_to_id.insert(pair.first.clone(), nodes.len()-1);
+                    nodes.len()-1
                 }
             };
             let second_id = match name_to_id.get(&pair.second) {
@@ -65,19 +65,24 @@ impl Network {
                 None => {
                     // New node id, register in nodes and name_to_id
                     nodes.push(pair.second.clone());
-                    neighbors.push(Vec::new());
-                    name_to_id.insert(pair.second.clone(), nodes.len());
-                    nodes.len()
+                    name_to_id.insert(pair.second.clone(), nodes.len()-1);
+                    nodes.len()-1
                 }
             };
 
-            neighbors[first_id].push(second_id);
-            neighbors[second_id].push(first_id);
+            neighbors.push((first_id, second_id));
         }
 
-        Network { nodes, neighbors }
+        // Vector of fully connected N sets.
+        // Entries 0 and 1 are empty
+        // Later entries will be computed and added here.
+        let fc_n = vec![HashSet::new(), HashSet::new()];
+
+
+        Network { nodes, neighbors, fc_n }
     }
 
+    #[allow(unused)]
     // Get a nodes name
     fn node_name(&self, n: usize) -> &str {
         &self.nodes[n]
@@ -85,8 +90,102 @@ impl Network {
 
     // Return a set (repr as a vector) of fully connected sets (another Vec)
     // Nodes are represented by id, usize
-    fn fc(&self, n: usize) -> Vec<Vec<usize>> {
+    fn fc(&mut self, n: usize) /* -> HashSet<Vec<usize>> */ {
+        
 
+        if n <= 1 {
+            panic!("It don't work like that.");
+        }
+        else if n < self.fc_n.len() {
+            // Already computed this
+            return;
+        }
+        else if n == 2 {
+            let mut fc_sets = HashSet::new();
+
+            // From each pair, create a minimal connected set
+            for pair in &self.neighbors {
+                let mut connected_set = Vec::new();
+                connected_set.push(pair.0);
+                connected_set.push(pair.1);
+                connected_set.sort();
+                fc_sets.insert(connected_set);
+            }
+
+            self.fc_n.push(fc_sets);
+        }
+        else {
+            // Get the set of fc(n-1) sets
+            self.fc(n-1);
+            let fc_m1 = &self.fc_n[n-1];
+
+            let mut fc_sets = HashSet::new();
+
+            // For each set in fc_m1, look for nodes not in a set but connected to every node in the set 
+            for set in fc_m1.iter() {
+                'nodes: for node in 0..self.nodes.len() {
+                    if set.contains(&node) { continue; }
+
+                    for set_node in set.iter() {
+                        // node isn't connected to some node in the set, 
+                        if !self.neighbors.contains(&(*set_node, node)) & 
+                           !self.neighbors.contains(&(node, *set_node)) { continue 'nodes; }
+                    }
+
+                    // We can create an fc(n) set from set and node
+                    let mut new_set = set.clone();
+                    new_set.push(node);
+                    new_set.sort();
+
+                    fc_sets.insert(new_set);
+                }
+            }
+
+            self.fc_n.push(fc_sets);
+        }
+
+    }
+
+    fn is_candidate(&self, node: &usize) -> bool {
+        self.nodes[*node].starts_with("t")
+    }
+
+    fn max_fc_size(&mut self) -> usize {
+
+        let mut size = 2;
+        loop {
+            self.fc(size);
+            if self.fc_n[size].len() == 0 {
+                break;
+            }
+            size += 1;
+        };
+
+        // Max fc size is now size-1
+        size-1
+    }
+
+    fn lan_passwd(&mut self) -> String {
+        // Analyze the network to determine max fc_size
+        let max_fc = self.max_fc_size();
+        let mut nodes = Vec::new();
+
+        if let Some(s) = self.fc_n[max_fc].iter().next() {
+            // Collect the nodes of this set
+            for node in s {
+                nodes.push(&self.nodes[*node]);
+            }
+        }
+
+        nodes.sort();
+
+        let mut passwd: String = String::new();
+        for n in 0..nodes.len() {
+            if n > 0 { passwd.push(','); }
+            passwd.push_str(&nodes[n]);
+        }
+
+        passwd
     }
 }
 
@@ -102,10 +201,20 @@ impl Day23 {
     fn t_triples(input: &Input) -> usize {
         // Construct a set of all triples by constructing a Network and
         // asking it for all fully connected sets of 3.
-        let network = Network::new(input);
-        let triples = network.fc(3);
+        let mut network = Network::new(input);
+        network.fc(3);
+        let triples = &network.fc_n[3];
 
-        triples.iter()
+        let t_triples: Vec<&Vec<usize>> = triples.iter()
+            .filter(|v| { 
+                v.iter().fold(false, |accum, node| {
+                    let is_t = network.is_candidate(node);
+
+                    accum | is_t
+                })
+            }).collect();
+
+        t_triples.len()
     }
 }
 
@@ -113,15 +222,16 @@ impl<'a> Day for Day23 {
 
     // Compute Part 1 solution
     fn part1(&self, text: &str) -> Answer {
-        let _input = Input::read(text);
+        let input = Input::read(text);
 
-        Answer::None
+        Answer::Numeric(Self::t_triples(&input))
     }
 
     fn part2(&self, text: &str) -> Answer {
-        let _input = Input::read(text);
+        let input = Input::read(text);
+        let mut network = Network::new(&input);
 
-        Answer::None
+        Answer::String(network.lan_passwd())
     }
 }
 
@@ -129,7 +239,7 @@ impl<'a> Day for Day23 {
 
 mod test {
 
-    use crate::day23::{Day23, Input};
+    use crate::day23::{Day23, Input, Network};
     use crate::day::{Day, Answer};
     
     // Example inputs
@@ -179,11 +289,72 @@ td-yn
     }
 
     #[test]
+    fn test_fc3() {
+        let input = Input::read(EXAMPLE1);
+        let mut network = Network::new(&input);
+
+        network.fc(3);
+
+        assert_eq!(network.fc_n[2].len(), 32);
+        assert_eq!(network.fc_n[3].len(), 12);
+    }
+
+    #[test]
+    fn test_t_triples() {
+        let input = Input::read(EXAMPLE1);
+
+        assert_eq!(Day23::t_triples(&input), 7);
+    }
+
+    #[test]
+    fn test_max_fc() {
+        let input = Input::read(EXAMPLE1);
+        let mut network = Network::new(&input);
+
+        assert_eq!(network.max_fc_size(), 4);
+    }
+
+    #[test]
+    fn test_lan_passwd_ex1() {
+        let input = Input::read(EXAMPLE1);
+        let mut network = Network::new(&input);
+
+        assert_eq!(network.lan_passwd(), "co,de,ka,ta");
+    }
+
+
+    #[test]
+    fn test_max_fc_d23() {
+        let input = Input::read(data_aoc2024::DAY23_INPUT);
+        let mut network = Network::new(&input);
+
+        assert_eq!(network.max_fc_size(), 13);
+    }
+
+    // TODO : Compute LAN password from max_fc
+    #[test]
+
+    fn test_lan_passwd() {
+        let input = Input::read(data_aoc2024::DAY23_INPUT);
+        let mut network = Network::new(&input);
+
+        assert_eq!(network.lan_passwd(), "az,ed,hz,it,ld,nh,pc,td,ty,ux,wc,yg,zz");
+    }
+    
+    #[test]
     // Compute part 1 result on example 1 and confirm expected value.
-    fn test_part1() {
+    fn test_part1_ex1() {
         // Based on the example in part 1.
         let d= Day23::new();
-        assert_eq!(d.part1(EXAMPLE1), Answer::None);
+        assert_eq!(d.part1(EXAMPLE1), Answer::Numeric(7));
+    }
+
+    #[test]
+    // Compute part 1 result on example 1 and confirm expected value.
+    fn test_part1_d23() {
+        // Based on the example in part 1.
+        let d= Day23::new();
+        assert_eq!(d.part1(data_aoc2024::DAY23_INPUT), Answer::Numeric(926));
     }
 
     #[test]
@@ -191,7 +362,7 @@ td-yn
     fn test_part2() {
         // Based on the example in part 2.
         let d = Day23::new();
-        assert_eq!(d.part2(EXAMPLE1), Answer::None);
+        assert_eq!(d.part2(EXAMPLE1), Answer::String(String::from("co,de,ka,ta")));
     }
     
 }
